@@ -1,0 +1,25 @@
+name: setup-dart
+description: Action that sets up the Dart SDK in a GitHub-hosted virtual environment.
+author: Cédric Belin <cedric@belin.io>
+
+branding:
+  color: blue
+  icon: package
+
+inputs:
+  architecture:
+    description: The architecture of the Dart SDK (ia32, x64).
+    default: x64
+    required: false
+  release-channel:
+    description: The release channel of the Dart SDK (dev, stable).
+    default: stable
+    required: false
+  version:
+    description: The version of the Dart SDK.
+    default: latest
+    required: false
+
+runs:
+  using: node12
+  main: lib/main.js
