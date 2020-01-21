@@ -1,0 +1,11 @@
+{
+  "excludePrivate": true,
+  "gaSite": "auto",
+  "gitRevision": "master",
+  "hideGenerator": true,
+  "mode": "file",
+  "name": "Setup Dart Action",
+  "out": "doc/api",
+  "readme": "none",
+  "tsconfig": "src/tsconfig.json"
+}
