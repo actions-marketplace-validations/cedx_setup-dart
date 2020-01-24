@@ -1,4 +1,4 @@
-import {addPath, info} from '@actions/core';
+import {addPath} from '@actions/core';
 import {cacheDir, downloadTool, extractZip, find} from '@actions/tool-cache';
 import {join} from 'path';
 import {format} from 'util';
@@ -13,11 +13,30 @@ export enum Architecture {
   x64 = 'x64'
 }
 
+/** Defines the release channel of the Dark SDK. */
+export enum ReleaseChannel {
+
+  /** Specifies a development Dart SDK. */
+  dev = 'dev',
+
+  /** Specifies a stable Dart SDK. */
+  stable = 'stable'
+}
+
 /** Represents a release of the Dark SDK. */
 export class DartSdk {
 
   /** The pattern used to format the URL of the ZIP archive corresponding to the Dart SDK. */
   static readonly downloadUrlPattern: string = 'https://storage.googleapis.com/dart-archive/channels/%s/release/%s/sdk/dartsdk-%s-%s-release.zip';
+
+  /** The architecture of this Dart SDK. */
+  readonly architecture: Architecture = Architecture.x64;
+
+  /** The release channel of this Dart SDK. */
+  readonly releaseChannel: ReleaseChannel = ReleaseChannel.stable;
+
+  /** The version of this Dart SDK. */
+  readonly version: string = 'latest';
 
   /**
    * Creates a new Dart SDK.
@@ -30,20 +49,11 @@ export class DartSdk {
     this.version = version;
   }
 
-  /** The architecture of this Dart SDK. */
-  readonly architecture: Architecture = Architecture.x64;
-
   /** Gets the URL of the ZIP archive corresponding to this Dart SDK. */
   get downloadUrl(): string {
     const platform = process.platform == 'win32' ? 'windows' : (process.platform == 'darwin' ? 'macos' : 'linux');
     return format(DartSdk.downloadUrlPattern, this.releaseChannel, this.version, platform, this.architecture);
   }
-
-  /** The release channel of this Dart SDK. */
-  readonly releaseChannel: ReleaseChannel = ReleaseChannel.stable;
-
-  /** The version of this Dart SDK. */
-  readonly version: string = 'latest';
 
   /** Installs this Dart SDK. */
   async setup(): Promise<void> {
@@ -68,14 +78,4 @@ interface DartSdkOptions {
 
   /** The version of this Dart SDK. */
   version: string;
-}
-
-/** Defines the release channel of the Dark SDK. */
-export enum ReleaseChannel {
-
-  /** Specifies a development Dart SDK. */
-  dev = 'dev',
-
-  /** Specifies a stable Dart SDK. */
-  stable = 'stable'
 }

@@ -1,17 +1,14 @@
-import {getInput, setFailed} from '@actions/core';
+import {getInput} from '@actions/core';
 import {Architecture, DartSdk, ReleaseChannel} from './dart_sdk';
 
 /**
- * Application entry point.
- * @return Completes when the program is terminated.
+ * Sets up the Dart SDK.
+ * @return Completes when the Dart SDK is installed.
  */
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
   return new DartSdk({
     architecture: getInput('architecture') as Architecture,
     releaseChannel: getInput('release-channel') as ReleaseChannel,
     version: getInput('version')
   }).setup();
 }
-
-// Start the application.
-main().catch(error => setFailed(error.message));
