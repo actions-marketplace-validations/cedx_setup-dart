@@ -9,6 +9,7 @@
 *.ts text
 *.txt text
 *.yaml text
+*.yml text
 
 *.ico binary
 *.jpg binary
