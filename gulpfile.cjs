@@ -1,7 +1,7 @@
 const {spawn} = require('child_process');
 const del = require('del');
 const {promises} = require('fs');
-const {series, task, watch} = require('gulp');
+const {parallel, series, task, watch} = require('gulp');
 const {delimiter, normalize, resolve} = require('path');
 
 // Initialize the build system.
@@ -10,7 +10,9 @@ const _vendor = resolve('node_modules/.bin');
 if (!_path.includes(_vendor)) process.env.PATH = `${_vendor}${delimiter}${_path}`;
 
 /** Builds the project. */
-task('build', () => _exec('tsc', ['--project', 'src/tsconfig.json']));
+task('build:js', () => _exec('tsc', ['--project', 'src/tsconfig.json']));
+task('build:npm', () => _exec('npm', ['prune', '--production']));
+task('build', parallel('build:js', 'build:npm'));
 
 /** Deletes all generated files and reset any saved state. */
 task('clean', () => del(['build', 'doc/api', 'lib', 'var/**/*', 'web']));
