@@ -1,3 +1,6 @@
+import {addPath, info} from '@actions/core';
+import {cacheDir, downloadTool, extractZip, find} from '@actions/tool-cache';
+import {join} from 'path';
 import {format} from 'util';
 
 /** Defines the architecture of the Dart SDK. */
@@ -41,6 +44,17 @@ export class DartSdk {
 
   /** The version of this Dart SDK. */
   readonly version: string = 'latest';
+
+  /** Installs this Dart SDK. */
+  async setup(): Promise<void> {
+    let skdDir = find('dart', this.version, this.architecture);
+    if (!skdDir) {
+      const output = await extractZip(await downloadTool(this.downloadUrl));
+      skdDir = await cacheDir(join(output, 'dart-sdk'), 'dart', this.version, this.architecture);
+    }
+
+    addPath(join(skdDir, 'bin'));
+  }
 }
 
 /** Defines the options of a [[DartSdk]] instance. */
