@@ -7,7 +7,7 @@
   "name": "@cedx/setup-dart",
   "private": true,
   "repository": "github:cedx/setup-dart",
-  "type": "module",
+  "type": "commonjs",
   "types": "lib/index.d.ts",
   "version": "0.1.0",
   "author": {
