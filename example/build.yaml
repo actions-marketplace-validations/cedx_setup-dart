@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Dart
-        uses: cedx/setup-dart@master
+        uses: cedx/setup-dart@v1
         with:
           architecture: x64
           release-channel: stable
@@ -16,7 +16,7 @@ jobs:
           dart --version
           pub --version
       - name: Fetch sources
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: pub get
       - name: Run tests

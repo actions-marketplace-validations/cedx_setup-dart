@@ -6,7 +6,6 @@ Set up your [GitHub Actions](https://github.com/features/actions) workflow with 
 ## Documentation
 - [User guide](https://dev.belin.io/setup-dart)
 - [API reference](https://dev.belin.io/setup-dart/api)
-- [GitHub marketplace](https://github.com/marketplace/actions/setup-dart-action)
 
 ## Development
 - [Git repository](https://github.com/cedx/setup-dart)

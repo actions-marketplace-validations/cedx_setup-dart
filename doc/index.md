@@ -14,7 +14,7 @@ Setup the Dart SDK in a workflow:
 
 ```yaml
 steps:
-  - uses: cedx/setup-dart@master
+  - uses: cedx/setup-dart@v1
   - run: pub get
   - run: pub run test
 ```

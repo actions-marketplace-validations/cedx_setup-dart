@@ -14,12 +14,12 @@ Setup a specific version of the Dart SDK:
 
 ```yaml
 steps:
-  - uses: cedx/setup-dart@master
+  - uses: cedx/setup-dart@v1
     with:
       architecture: ia32
       release-channel: dev
       version: 2.8.0-dev.5.0
-  - uses: actions/checkout@master
+  - uses: actions/checkout@v2
   - run: pub get
   - run: pub run test
 ```
@@ -40,10 +40,10 @@ jobs:
         dart: [stable, dev]
         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
-      - uses: cedx/setup-dart@master
+      - uses: cedx/setup-dart@v1
         with:
           release-channel: ${{matrix.dart}}
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: pub get
       - run: pub run test
 ```
