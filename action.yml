@@ -1,5 +1,5 @@
 name: setup-dart
-description: Action that sets up the Dart SDK in a GitHub-hosted virtual environment.
+description: Set up your GitHub Actions workflow with a specific version of the Dart SDK.
 author: Cédric Belin <cedric@belin.io>
 
 branding:

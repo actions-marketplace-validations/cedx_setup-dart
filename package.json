@@ -1,6 +1,6 @@
 {
   "bugs": "https://github.com/cedx/setup-dart/issues",
-  "description": "Action that sets up the Dart SDK in a GitHub-hosted virtual environment.",
+  "description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
   "homepage": "https://dev.belin.io/setup-dart",
   "license": "MIT",
   "main": "lib/index.js",
@@ -9,7 +9,7 @@
   "repository": "github:cedx/setup-dart",
   "type": "commonjs",
   "types": "lib/index.d.ts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "email": "cedric@belin.io",
     "name": "Cédric Belin",
@@ -52,7 +52,7 @@
     "github",
     "sdk",
     "test",
-    "vm"
+    "workflow"
   ],
   "scripts": {
     "coverage": "gulp coverage",

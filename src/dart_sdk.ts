@@ -57,10 +57,10 @@ export class DartSdk {
 
   /** Installs this Dart SDK. */
   async setup(): Promise<void> {
-    let skdDir = find('dart', this.version, this.architecture);
+    let skdDir = find('dart-sdk', this.version, this.architecture);
     if (!skdDir) {
       const output = await extractZip(await downloadTool(this.downloadUrl));
-      skdDir = await cacheDir(join(output, 'dart-sdk'), 'dart', this.version, this.architecture);
+      skdDir = await cacheDir(join(output, 'dart-sdk'), 'dart-sdk', this.version, this.architecture);
     }
 
     addPath(join(skdDir, 'bin'));
