@@ -55,7 +55,7 @@ task('watch', () => {
 });
 
 /** Runs the default tasks. */
-task('default', task('clean', 'build'));
+task('default', series('clean', 'build'));
 
 /**
  * Spawns a new process using the specified command.
