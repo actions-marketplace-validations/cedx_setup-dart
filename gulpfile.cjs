@@ -37,7 +37,7 @@ task('lint', () => _exec('eslint', ['--config=etc/eslint.yaml', 'src/**/*.ts']))
 /** Runs the test suites. */
 const mocha = ['node_modules/.bin/mocha', '--recursive'];
 task('test:run', () => _exec('c8', ['--all', '--include=lib/**/*.js', '--report-dir=var', '--reporter=lcovonly', ...mocha]));
-task('test', series('build', 'test:run'));
+task('test', series('build:js', 'test:run'));
 
 /** Upgrades the project to the latest revision. */
 task('upgrade', async () => {
