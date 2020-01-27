@@ -1,5 +1,6 @@
 import {addPath} from '@actions/core';
 import {cacheDir, downloadTool, extractZip, find} from '@actions/tool-cache';
+import {promises} from 'fs';
 import {join} from 'path';
 import {format} from 'util';
 
@@ -36,13 +37,13 @@ export class DartSdk {
   static readonly downloadUrlPattern: string = 'https://storage.googleapis.com/dart-archive/channels/%s/release/%s/sdk/dartsdk-%s-%s-release.zip';
 
   /** The architecture of this Dart SDK. */
-  readonly architecture: Architecture;
+  architecture: Architecture;
 
   /** The release channel of this Dart SDK. */
-  readonly releaseChannel: ReleaseChannel;
+  releaseChannel: ReleaseChannel;
 
   /** The version of this Dart SDK. */
-  readonly version: string;
+  version: string;
 
   /**
    * Creates a new Dart SDK.
@@ -72,7 +73,12 @@ export class DartSdk {
   /** Installs this Dart SDK, after downloading it if required. */
   async install(): Promise<void> {
     let skdDir = find('dart-sdk', this.version, this.architecture);
-    if (!skdDir) skdDir = await cacheDir(await this.download(), 'dart-sdk', this.version, this.architecture);
+    if (!skdDir || this.version == 'latest') {
+      const output = await this.download();
+      this.version = (await promises.readFile(join(output, 'version'), 'utf8')).trim();
+      skdDir = await cacheDir(output, 'dart-sdk', this.version, this.architecture);
+    }
+
     addPath(join(skdDir, 'bin'));
   }
 }

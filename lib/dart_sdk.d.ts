@@ -21,11 +21,11 @@ export declare class DartSdk {
     /** The pattern used to format the URL of the ZIP archive corresponding to the Dart SDK. */
     static readonly downloadUrlPattern: string;
     /** The architecture of this Dart SDK. */
-    readonly architecture: Architecture;
+    architecture: Architecture;
     /** The release channel of this Dart SDK. */
-    readonly releaseChannel: ReleaseChannel;
+    releaseChannel: ReleaseChannel;
     /** The version of this Dart SDK. */
-    readonly version: string;
+    version: string;
     /**
      * Creates a new Dart SDK.
      * @param options An object specifying values used to initialize this instance.
