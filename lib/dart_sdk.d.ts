@@ -32,9 +32,14 @@ export declare class DartSdk {
      */
     constructor(options?: Partial<DartSdkOptions>);
     /** Gets the URL of the ZIP archive corresponding to this Dart SDK. */
-    get downloadUrl(): string;
-    /** Installs this Dart SDK. */
-    setup(): Promise<void>;
+    get releaseUrl(): string;
+    /**
+     * Downloads and extracts the ZIP archive corresponding to this Dart SDK release.
+     * @return The path to the extracted directory.
+     */
+    download(): Promise<string>;
+    /** Installs this Dart SDK, after downloading it if required. */
+    install(): Promise<void>;
 }
 /** Defines the options of a [[DartSdk]] instance. */
 interface DartSdkOptions {

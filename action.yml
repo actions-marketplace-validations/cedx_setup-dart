@@ -9,7 +9,6 @@ branding:
 inputs:
   architecture:
     description: The architecture of the Dart SDK ("arm", "arm64", "ia32" or "x64").
-    default: x64
     required: false
   release-channel:
     description: The release channel of the Dart SDK ("dev" or "stable").

@@ -36,13 +36,13 @@ export class DartSdk {
   static readonly downloadUrlPattern: string = 'https://storage.googleapis.com/dart-archive/channels/%s/release/%s/sdk/dartsdk-%s-%s-release.zip';
 
   /** The architecture of this Dart SDK. */
-  readonly architecture: Architecture = Architecture.x64;
+  readonly architecture: Architecture;
 
   /** The release channel of this Dart SDK. */
-  readonly releaseChannel: ReleaseChannel = ReleaseChannel.stable;
+  readonly releaseChannel: ReleaseChannel;
 
   /** The version of this Dart SDK. */
-  readonly version: string = 'latest';
+  readonly version: string;
 
   /**
    * Creates a new Dart SDK.
@@ -56,19 +56,23 @@ export class DartSdk {
   }
 
   /** Gets the URL of the ZIP archive corresponding to this Dart SDK. */
-  get downloadUrl(): string {
+  get releaseUrl(): string {
     const platform = process.platform == 'win32' ? 'windows' : (process.platform == 'darwin' ? 'macos' : 'linux');
     return format(DartSdk.downloadUrlPattern, this.releaseChannel, this.version, platform, this.architecture);
   }
 
-  /** Installs this Dart SDK. */
-  async setup(): Promise<void> {
-    let skdDir = find('dart-sdk', this.version, this.architecture);
-    if (!skdDir) {
-      const output = await extractZip(await downloadTool(this.downloadUrl));
-      skdDir = await cacheDir(join(output, 'dart-sdk'), 'dart-sdk', this.version, this.architecture);
-    }
+  /**
+   * Downloads and extracts the ZIP archive corresponding to this Dart SDK release.
+   * @return The path to the extracted directory.
+   */
+  async download(): Promise<string> {
+    return join(await extractZip(await downloadTool(this.releaseUrl)), 'dart-sdk');
+  }
 
+  /** Installs this Dart SDK, after downloading it if required. */
+  async install(): Promise<void> {
+    let skdDir = find('dart-sdk', this.version, this.architecture);
+    if (!skdDir) skdDir = await cacheDir(await this.download(), 'dart-sdk', this.version, this.architecture);
     addPath(join(skdDir, 'bin'));
   }
 }

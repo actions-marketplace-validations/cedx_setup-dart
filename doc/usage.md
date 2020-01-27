@@ -3,7 +3,7 @@
 ## Inputs
 Inputs supported by this GitHub Action:
 
-- `architecture`: the architecture of the Dart SDK (optional, defaults to `"x64"`).
+- `architecture`: the architecture of the Dart SDK (optional, defaults to the host architecture).
 - `release-channel`: the release channel of the Dart SDK (optional, defaults to `"stable"`).
 - `version`: the version of the Dart SDK (optional, defaults to `"latest"`).
 
@@ -16,7 +16,7 @@ Setup a specific version of the Dart SDK:
 steps:
   - uses: cedx/setup-dart@v1
     with:
-      architecture: ia32
+      architecture: x64
       release-channel: dev
       version: 2.8.0-dev.5.0
   - uses: actions/checkout@v2
@@ -33,16 +33,16 @@ Setup multiple versions of the Dart SDK on multiple operating systems:
 ```yaml
 jobs:
   test:
-    name: Dart SDK ${{matrix.dart}} on ${{matrix.os}}
+    name: Dart SDK ${{matrix.sdk}} on ${{matrix.os}}
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        dart: [stable, dev]
         os: [macos-latest, ubuntu-latest, windows-latest]
+        sdk: [dev, stable]
     steps:
       - uses: cedx/setup-dart@v1
         with:
-          release-channel: ${{matrix.dart}}
+          release-channel: ${{matrix.sdk}}
       - uses: actions/checkout@v2
       - run: pub get
       - run: pub run test
