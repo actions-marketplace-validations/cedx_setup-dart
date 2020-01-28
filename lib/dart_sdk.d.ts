@@ -11,9 +11,9 @@ export declare enum Architecture {
 }
 /** Defines the release channel of the Dark SDK. */
 export declare enum ReleaseChannel {
-    /** Specifies a development Dart SDK. */
+    /** Specifies a development release of the Dart SDK. */
     dev = "dev",
-    /** Specifies a stable Dart SDK. */
+    /** Specifies a stable release of the Dart SDK. */
     stable = "stable"
 }
 /** Represents a release of the Dark SDK. */
