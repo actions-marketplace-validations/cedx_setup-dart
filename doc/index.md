@@ -6,9 +6,7 @@ Set up your [GitHub Actions](https://github.com/features/actions) workflow with 
 ![GitHub Actions](img/github_actions.png)
 
 ## Getting started
-
-!!! info
-    If you haven't used GitHub Actions before, be sure to check out the [related documentation](https://help.github.com/en/actions), as it explains how to create and configure a workflow.
+If you haven't used GitHub Actions before, be sure to check out the [related documentation](https://help.github.com/en/actions), as it explains how to create and configure a workflow.
 
 Setup the Dart SDK in a workflow:
 
