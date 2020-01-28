@@ -1,4 +1,4 @@
-/** Defines the architecture of the Dart SDK. */
+/** Defines the processor architecture of the Dart SDK. */
 export declare enum Architecture {
     /** Specifies a 32-bit ARM architecture. */
     arm = "arm",
@@ -8,6 +8,15 @@ export declare enum Architecture {
     ia32 = "ia32",
     /** Specifies a 64-bit AMD/Intel architecture. */
     x64 = "x64"
+}
+/** Defines the platform of the Dart SDK. */
+export declare enum Platform {
+    /** Specifies a Linux platform. */
+    linux = "linux",
+    /** Specifies a macOS platform. */
+    macos = "macos",
+    /** Specifies a Windows platform. */
+    windows = "windows"
 }
 /** Defines the release channel of the Dark SDK. */
 export declare enum ReleaseChannel {

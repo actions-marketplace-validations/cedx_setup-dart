@@ -4,7 +4,7 @@ import {promises} from 'fs';
 import {join} from 'path';
 import {format} from 'util';
 
-/** Defines the architecture of the Dart SDK. */
+/** Defines the processor architecture of the Dart SDK. */
 export enum Architecture {
 
   /** Specifies a 32-bit ARM architecture. */
@@ -18,6 +18,19 @@ export enum Architecture {
 
   /** Specifies a 64-bit AMD/Intel architecture. */
   x64 = 'x64'
+}
+
+/** Defines the platform of the Dart SDK. */
+export enum Platform {
+
+  /** Specifies a Linux platform. */
+  linux = 'linux',
+
+  /** Specifies a macOS platform. */
+  macos = 'macos',
+
+  /** Specifies a Windows platform. */
+  windows = 'windows'
 }
 
 /** Defines the release channel of the Dark SDK. */
@@ -58,7 +71,7 @@ export class DartSdk {
 
   /** Gets the URL of the ZIP archive corresponding to this Dart SDK. */
   get releaseUrl(): string {
-    const platform = process.platform == 'win32' ? 'windows' : (process.platform == 'darwin' ? 'macos' : 'linux');
+    const platform = process.platform == 'win32' ? Platform.windows : (process.platform == 'darwin' ? Platform.macos : Platform.linux);
     return format(DartSdk.downloadUrlPattern, this.releaseChannel, this.version, platform, this.architecture);
   }
 
