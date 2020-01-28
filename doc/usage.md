@@ -1,15 +1,35 @@
 # Usage
 
 ## Inputs
-Inputs supported by this GitHub Action:
+By default, this action will install the latest stable release of the Dart SDK corresponding to the current host platform and processor architecture.  
+You can customize the downloaded release with the following inputs:
 
-- `architecture`: the architecture of the Dart SDK (optional, defaults to the host architecture).
-- `release-channel`: the release channel of the Dart SDK (optional, defaults to `"stable"`).
-- `version`: the version of the Dart SDK (optional, defaults to `"latest"`).
+### **architecture**: string
+The processor architecture of the Dart SDK (optional, defaults to the host architecture).  
+Allowed values are:
 
-See the [`action.yml`](https://github.com/cedx/setup-dart/blob/master/action.yml) file for more information.
+- `x64`: a 64-bit AMD/Intel architecture.
+- `ia32`: a 32-bit AMD/Intel architecture.
+- `arm64`: a 64-bit ARM architecture (Linux only).
+- `arm`: a 32-bit ARM architecture (Linux only).
 
-## Basic setup
+### **release-channel**: string
+The release channel of the Dart SDK (optional, defaults to `"stable"`).  
+Allowed values are:
+
+- `stable`: the stable release of the SDK.
+- `dev`: the development release of the SDK.
+
+### **version**: string
+The version number of the Dart SDK (optional, defaults to `"latest"`).  
+Allowed values are:
+
+- `latest`: the latest release of the SDK.
+- a specific version number: `1.23.4`, `1.25.0-dev.16.4`, `2.7.1`, `2.8.0-dev.5.0`, etc.
+    
+## Setup
+
+### Basic
 Setup a specific version of the Dart SDK:
 
 ```yaml
@@ -27,7 +47,7 @@ steps:
 !!! tip
     A sample workflow can be found in the [`build.yaml`](https://github.com/cedx/setup-dart/blob/master/example/build.yaml) file.
 
-## Matrix setup
+### Matrix
 Setup multiple versions of the Dart SDK on multiple operating systems:
 
 ```yaml

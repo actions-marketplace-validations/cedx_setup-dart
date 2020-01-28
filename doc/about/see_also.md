@@ -1,7 +1,7 @@
 # See also
 
 ## GitHub Actions
-- [Automating your workflow with GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions)
+- [Automating your workflow](https://help.github.com/en/actions/automating-your-workflow-with-github-actions)
 - [Configuring a workflow](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
 
 ## Development
