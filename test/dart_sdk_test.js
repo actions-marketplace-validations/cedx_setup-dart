@@ -8,7 +8,7 @@ const {Architecture, DartSdk, Platform, ReleaseChannel} = require('../lib/index.
 describe('DartSdk', function() {
   this.timeout(120000);
 
-  describe('#releaseUrl', () => {
+  describe('.releaseUrl', () => {
     it('should point, by default, to the latest stable release', () => {
       const dartSdk = new DartSdk;
       const urlPattern = `https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-%s-x64-release.zip`;
@@ -26,7 +26,7 @@ describe('DartSdk', function() {
     });
   });
 
-  describe('#download()', () => {
+  describe('.download()', () => {
     it('should properly download and extract the Dart SDK', async () => {
       const executable = process.platform == 'win32' ? 'dart.exe' : 'dart';
       const sdkDir = await new DartSdk({releaseChannel: ReleaseChannel.stable, version: '2.7.0'}).download();
@@ -35,7 +35,7 @@ describe('DartSdk', function() {
     });
   });
 
-  describe('#install()', () => {
+  describe('.install()', () => {
     it('should add the Dart SDK binaries to the PATH environment variable', async () => {
       const dartSdk = new DartSdk;
       await dartSdk.install();
