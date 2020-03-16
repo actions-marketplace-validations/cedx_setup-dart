@@ -8,7 +8,7 @@
 /var/
 /web/
 
-!/node_modules/@ctions/
+!/node_modules/@actions/
 !/node_modules/semver/
 !/node_modules/tunnel/
 !/node_modules/uuid/
