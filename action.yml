@@ -1,6 +1,6 @@
-name: setup-dart
+name: Setup Dart Action
 description: Set up your GitHub Actions workflow with a specific version of the Dart SDK.
-author: Cédric Belin <cedric@belin.io>
+author: Cédric Belin
 
 branding:
   color: blue
