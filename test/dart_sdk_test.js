@@ -8,6 +8,11 @@ const {Architecture, DartSdk, Platform, ReleaseChannel} = require('../lib/index.
 describe('DartSdk', function() {
   this.timeout(120000);
 
+  before(() => {
+    if (!('RUNNER_TEMP' in process.env)) process.env.RUNNER_TEMP = join(__dirname, '../var/tests/temp');
+    if (!('RUNNER_TOOL_CACHE' in process.env)) process.env.RUNNER_TOOL_CACHE = join(__dirname, '../var/tests/cache');
+  });
+
   describe('.releaseUrl', () => {
     it('should point, by default, to the latest stable release', () => {
       const dartSdk = new DartSdk;
