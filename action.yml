@@ -4,7 +4,7 @@ author: Cédric Belin
 
 branding:
   color: blue
-  icon: play-circle
+  icon: download
 
 inputs:
   architecture:
