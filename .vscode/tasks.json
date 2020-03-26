@@ -49,6 +49,11 @@
     },
     {
       "problemMatcher": [],
+      "task": "version",
+      "type": "gulp"
+    },
+    {
+      "problemMatcher": [],
       "task": "watch",
       "type": "gulp"
     }

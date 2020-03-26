@@ -1,7 +1,8 @@
 const {spawn} = require('child_process');
 const del = require('del');
-const {promises} = require('fs');
-const {series, task, watch} = require('gulp');
+const {promises, readFileSync} = require('fs');
+const {dest, series, src, task, watch} = require('gulp');
+const replace = require('gulp-replace');
 const {delimiter, normalize, resolve} = require('path');
 
 // Initialize the build system.
@@ -47,6 +48,10 @@ task('upgrade', async () => {
   await _exec('npm', ['install', '--ignore-scripts', '--production=false']);
   return _exec('npm', ['update', '--dev']);
 });
+
+/** Updates the version number. */
+const {version} = JSON.parse(readFileSync('package.json', 'utf8'));
+task('version', () => src(['README.md', 'doc/index.md'], {base: '.'}).pipe(replace(/action-v\d+(\.\d+){2}/, `action-v${version}`)).pipe(dest('.')));
 
 /** Watches for file changes. */
 task('watch', () => {
