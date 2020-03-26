@@ -3,6 +3,7 @@
 ## GitHub Actions
 - [Automating your workflow](https://help.github.com/en/actions/automating-your-workflow-with-github-actions)
 - [Configuring a workflow](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/configuring-a-workflow)
+- [GitHub marketplace](https://github.com/marketplace/actions/setup-dart-action)
 
 ## Development
 - [API reference](https://dev.belin.io/setup-dart/api)

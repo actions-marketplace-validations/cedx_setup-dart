@@ -9,6 +9,7 @@ Set up your [GitHub Actions](https://github.com/features/actions) workflow with 
 
 ## Development
 - [Git repository](https://github.com/cedx/setup-dart)
+- [GitHub marketplace](https://github.com/marketplace/actions/setup-dart-action)
 - [Submit an issue](https://github.com/cedx/setup-dart/issues)
 
 ## License
