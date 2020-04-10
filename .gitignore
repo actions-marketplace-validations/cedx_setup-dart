@@ -6,7 +6,7 @@
 /doc/api/
 /node_modules/
 /var/
-/web/
+/www/
 
 !/node_modules/@actions/
 !/node_modules/semver/
