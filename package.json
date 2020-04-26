@@ -1,15 +1,14 @@
 {
-  "bugs": "https://github.com/cedx/setup-dart/issues",
+  "bugs": "https://git.belin.io/cedx/setup-dart/issues",
   "description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
-  "homepage": "https://dev.belin.io/setup-dart",
+  "homepage": "https://docs.belin.io/setup-dart",
   "license": "MIT",
   "main": "lib/index.js",
   "name": "@cedx/setup-dart",
   "private": true,
-  "repository": "github:cedx/setup-dart",
   "type": "commonjs",
   "types": "lib/index.d.ts",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "email": "cedric@belin.io",
     "name": "Cédric Belin",
