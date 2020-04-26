@@ -37,6 +37,9 @@ export enum Platform {
 export enum ReleaseChannel {
 
   /** Specifies a development release of the Dart SDK. */
+  beta = 'beta',
+
+  /** Specifies a development release of the Dart SDK. */
   dev = 'dev',
 
   /** Specifies a stable release of the Dart SDK. */
