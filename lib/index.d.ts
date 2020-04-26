@@ -1,2 +1,2 @@
-export * from './dart_sdk';
-export * from './main';
+export * from './dart_sdk.js';
+export * from './main.js';
