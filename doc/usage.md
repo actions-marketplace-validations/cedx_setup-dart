@@ -45,7 +45,7 @@ steps:
 ```
 
 !!! tip
-    A sample workflow can be found in the [`build.yaml`](https://github.com/cedx/setup-dart/blob/master/example/build.yaml) file.
+    A sample workflow can be found in the [`build.yaml`](https://git.belin.io/cedx/setup-dart/src/branch/master/example/build.yaml) file.
 
 ### Matrix
 Setup multiple versions of the Dart SDK on multiple operating systems:

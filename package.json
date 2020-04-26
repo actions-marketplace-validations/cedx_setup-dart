@@ -55,6 +55,10 @@
     "test",
     "workflow"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.belin.io/cedx/setup-dart.git"
+  },
   "scripts": {
     "coverage": "gulp coverage",
     "prepack": "gulp",
