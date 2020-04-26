@@ -1,6 +1,6 @@
 import {getInput} from '@actions/core';
 import {arch} from 'os';
-import {Architecture, DartSdk, ReleaseChannel} from './dart_sdk';
+import {Architecture, DartSdk, ReleaseChannel} from './dart_sdk.js';
 
 /**
  * Sets up the Dart SDK.
