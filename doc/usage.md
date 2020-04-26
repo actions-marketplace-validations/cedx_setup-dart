@@ -26,7 +26,7 @@ The version number of the Dart SDK (optional, defaults to `"latest"`).
 Allowed values are:
 
 - `latest`: the latest release of the SDK.
-- a specific version number: `1.23.4`, `1.25.0-dev.16.4`, `2.7.1`, `2.8.0-dev.5.0`, etc.
+- a specific version number: `2.7.2`, `2.8.0-20.11.beta`, `2.9.0-3.0.dev`, etc.
     
 ## Setup
 
@@ -39,7 +39,7 @@ steps:
     with:
       architecture: x64
       release-channel: dev
-      version: 2.8.0-dev.5.0
+      version: 2.9.0-3.0.dev
   - uses: actions/checkout@v2
   - run: pub get
   - run: pub run test
@@ -59,7 +59,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        sdk: [dev, stable]
+        sdk: [beta, dev, stable]
     steps:
       - uses: cedx/setup-dart@v1
         with:
