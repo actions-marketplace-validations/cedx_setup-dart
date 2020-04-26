@@ -34,12 +34,12 @@ Allowed values are:
 Setup a specific version of the Dart SDK:
 
 <pre><code>steps:
-  - uses: cedx/setup-dart@v1
+  - uses: cedx/setup-dart&commat;v1
     with:
       architecture: x64
       release-channel: dev
       version: 2.9.0-3.0.dev
-  - uses: actions/checkout@v2
+  - uses: actions/checkout&commat;v2
   - run: pub get
   - run: pub run test</code></pre>
 
@@ -58,7 +58,7 @@ Setup multiple versions of the Dart SDK on multiple operating systems:
         os: [macos-latest, ubuntu-latest, windows-latest]
         sdk: [beta, dev, stable]
     steps:
-      - uses: cedx/setup-dart@v1
+      - uses: cedx/setup-dart&commat;v1
         with:
           release-channel: ${{matrix.sdk}}
       - uses: actions/checkout&commat;v2

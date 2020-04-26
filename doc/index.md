@@ -10,11 +10,9 @@ If you haven't used GitHub Actions before, be sure to check out the [related doc
 
 Setup the Dart SDK in a workflow:
 
-```yaml
-steps:
+<pre><code>steps:
   - uses: cedx/setup-dart&commat;v1
   - run: pub get
-  - run: pub run test
-```
+  - run: pub run test</code></pre>
 
 For more details, see the [usage information](usage.md).
