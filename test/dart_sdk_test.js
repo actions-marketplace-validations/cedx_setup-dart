@@ -4,7 +4,7 @@ const {normalize, join} = require('path');
 const {format} = require('util');
 const {Architecture, DartSdk, Platform, ReleaseChannel} = require('../lib/index.js');
 
-/** Tests the features of the {@link DartSdk} class. */
+/** Tests the features of the `DartSdk` class. */
 describe('DartSdk', function() {
   this.timeout(120000);
 
