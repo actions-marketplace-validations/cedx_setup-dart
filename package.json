@@ -26,6 +26,7 @@
     "@types/node": "^13.13.5",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "@zeit/ncc": "^0.22.1",
     "c8": "^7.1.2",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
@@ -59,9 +60,8 @@
     "url": "https://git.belin.io/cedx/setup-dart.git"
   },
   "scripts": {
-    "coverage": "gulp coverage",
-    "prepack": "gulp",
-    "start": "gulp watch",
-    "test": "gulp test"
+    "coverage": "coveralls var/lcov.info",
+    "prepack": "pwsh tool/build.ps1",
+    "test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
   }
 }

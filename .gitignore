@@ -8,14 +8,8 @@
 /var/
 /www/
 
-!/node_modules/@actions/
-!/node_modules/semver/
-!/node_modules/tunnel/
-!/node_modules/uuid/
-
 /*.code-workspace
 /*.iml
 /**/.DS_Store
 /npm-debug.log
 /package-lock.json
-/share/*.private.env.json
