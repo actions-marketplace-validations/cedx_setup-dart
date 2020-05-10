@@ -1,8 +1,8 @@
-const {strict: assert} = require('assert');
-const {existsSync, promises} = require('fs');
-const {normalize, join} = require('path');
-const {format} = require('util');
-const {Architecture, DartSdk, Platform, ReleaseChannel} = require('../lib/index.js');
+import {strict as assert} from 'assert';
+import {existsSync, promises} from 'fs';
+import {normalize, join} from 'path';
+import {format} from 'util';
+import {Architecture, DartSdk, Platform, ReleaseChannel} from '../lib/index.js';
 
 /** Tests the features of the `DartSdk` class. */
 describe('DartSdk', function() {
