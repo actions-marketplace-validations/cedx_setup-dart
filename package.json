@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "name": "@cedx/setup-dart",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "types": "lib/index.d.ts",
   "version": "1.4.0",
   "author": {
@@ -34,7 +34,7 @@
     "typescript": "^3.8.3"
   },
   "engines": {
-    "node": ">=14.2.0"
+    "node": ">=12.16.0"
   },
   "files": [
     "lib/"

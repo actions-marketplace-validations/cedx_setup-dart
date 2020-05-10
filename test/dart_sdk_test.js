@@ -1,12 +1,12 @@
-import {strict as assert} from 'assert';
-import {existsSync, promises} from 'fs';
-import {normalize, join} from 'path';
-import {format} from 'util';
-import {Architecture, DartSdk, Platform, ReleaseChannel} from '../lib/index.js';
+const {strict: assert} = require('assert');
+const {existsSync, promises} = require('fs');
+const {normalize, join} = require('path');
+const {format} = require('util');
+const {Architecture, DartSdk, Platform, ReleaseChannel} = require('../lib/index.js');
 
 /** Tests the features of the `DartSdk` class. */
 describe('DartSdk', function() {
-  this.timeout(120000);
+  this.timeout(180000);
 
   before(() => {
     if (!('RUNNER_TEMP' in process.env)) process.env.RUNNER_TEMP = join(__dirname, '../var/tests/temp');
