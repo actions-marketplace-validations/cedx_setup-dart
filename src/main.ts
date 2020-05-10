@@ -1,4 +1,4 @@
-import {getInput} from '@actions/core';
+import {getInput, setFailed} from '@actions/core';
 import {arch} from 'os';
 import {Architecture, DartSdk, ReleaseChannel} from './dart_sdk.js';
 
@@ -12,3 +12,6 @@ export async function main(): Promise<void> {
   const version = getInput('version') || 'latest';
   return new DartSdk({architecture, releaseChannel, version}).install();
 }
+
+// Start the application.
+if (require.main == module) main().catch(error => setFailed(error.message));
