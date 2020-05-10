@@ -28,8 +28,7 @@
     "@typescript-eslint/parser": "^2.31.0",
     "@zeit/ncc": "^0.22.1",
     "c8": "^7.1.2",
-    "del": "^5.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-replace": "^1.0.0",
     "mocha": "^7.1.2",
@@ -61,7 +60,7 @@
   },
   "scripts": {
     "coverage": "coveralls var/lcov.info",
-    "prepack": "pwsh tool/build.ps1",
+    "prepack": "pwsh tool/dist.ps1",
     "test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
   }
 }
