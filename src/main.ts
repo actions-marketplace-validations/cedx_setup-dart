@@ -14,4 +14,4 @@ export async function main(): Promise<void> {
 }
 
 // Start the application.
-if (require.main == module) main().catch(error => setFailed(error.message));
+if (module == require.main) main().catch(error => setFailed(error.message));
