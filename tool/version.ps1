@@ -13,5 +13,5 @@ function Update-File {
 }
 
 $version = (Get-Content package.json | ConvertFrom-Json).version
-Update-File README.md 'action-v\d+(\.\d+){2}' "action-v$version"
-Update-File doc/index.md 'action-v\d+(\.\d+){2}' "action-v$version"
+Update-File README.md 'action/v\d+(\.\d+){2}' "action/v$version"
+Update-File doc/index.md 'action/v\d+(\.\d+){2}' "action/v$version"
