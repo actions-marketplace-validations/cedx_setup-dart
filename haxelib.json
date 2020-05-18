@@ -1,0 +1,11 @@
+{
+	"classPath": "src/",
+	"contributors": ["cedx"],
+	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
+	"license": "MIT",
+	"name": "setup_dart",
+	"releasenote": "Fixed the packaging.",
+	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
+	"url": "https://docs.belin.io/setup-dart",
+	"version": "2.0.0"
+}
