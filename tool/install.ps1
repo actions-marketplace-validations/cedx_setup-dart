@@ -2,10 +2,10 @@
 Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot)
 
-git reset --hard
-git fetch --all --prune
-git pull --rebase
+haxelib newrepo
+haxelib install checkstyle
+haxelib install dox
+haxelib install formatter
+haxelib install all --always
 
-haxelib update --always
 npm install --ignore-scripts --production=false
-npm update --dev

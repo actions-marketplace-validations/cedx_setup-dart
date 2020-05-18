@@ -12,6 +12,7 @@ function Update-File {
 	(Get-Content $file) -replace $pattern, $replacement | Out-File $file
 }
 
-$version = (Get-Content package.json | ConvertFrom-Json).version
+$version = (Get-Content haxelib.json | ConvertFrom-Json).version
+Update-File package.json '"version": "\d+(\.\d+){2}"' """version"": ""$version"""
 Update-File README.md "action/v\d+(\.\d+){2}" "action/v$version"
 Update-File doc/index.md "action/v\d+(\.\d+){2}" "action/v$version"
