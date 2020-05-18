@@ -1,0 +1,7 @@
+--class-path src
+--class-path test
+--define js-es=6
+--js var/tests.js
+--library hxnodejs
+--library utest
+--main TestAll
