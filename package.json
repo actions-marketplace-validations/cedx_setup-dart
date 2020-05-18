@@ -1,64 +1,57 @@
 {
-  "bugs": "https://git.belin.io/cedx/setup-dart/issues",
-  "description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
-  "homepage": "https://docs.belin.io/setup-dart",
-  "license": "MIT",
-  "main": "lib/index.js",
-  "name": "@cedx/setup-dart",
-  "private": true,
-  "type": "commonjs",
-  "types": "lib/index.d.ts",
-  "version": "1.4.0",
-  "author": {
-    "email": "cedric@belin.io",
-    "name": "Cédric Belin",
-    "url": "https://belin.io"
-  },
-  "bin": {
-    "setup_dart": "bin/setup_dart.js"
-  },
-  "dependencies": {
-    "@actions/core": "^1.2.4",
-    "@actions/tool-cache": "^1.3.5"
-  },
-  "devDependencies": {
-    "@cedx/coveralls": "^10.0.0",
-    "@types/node": "^14.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.33.0",
-    "@zeit/ncc": "^0.22.1",
-    "c8": "^7.1.2",
-    "eslint": "^7.0.0",
-    "mocha": "^7.1.2",
-    "typedoc": "^0.17.6",
-    "typescript": "^3.9.2"
-  },
-  "engines": {
-    "node": ">=12.16.0"
-  },
-  "files": [
-    "lib/"
-  ],
-  "funding": {
-    "type": "patreon",
-    "url": "https://www.patreon.com/cedx"
-  },
-  "keywords": [
-    "action",
-    "ci",
-    "dart",
-    "github",
-    "sdk",
-    "test",
-    "workflow"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://git.belin.io/cedx/setup-dart.git"
-  },
-  "scripts": {
-    "coverage": "coveralls var/lcov.info",
-    "prepack": "pwsh tool/dist.ps1",
-    "test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
-  }
+	"bugs": "https://git.belin.io/cedx/setup-dart/issues",
+	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
+	"homepage": "https://docs.belin.io/setup-dart",
+	"license": "MIT",
+	"main": "lib/index.js",
+	"name": "@cedx/setup-dart",
+	"private": true,
+	"type": "commonjs",
+	"types": "lib/index.d.ts",
+	"version": "2.0.0",
+	"author": {
+		"email": "cedric@belin.io",
+		"name": "Cédric Belin",
+		"url": "https://belin.io"
+	},
+	"bin": {
+		"setup_dart": "bin/setup_dart.js"
+	},
+	"dependencies": {
+		"@actions/core": "^1.2.4",
+		"@actions/tool-cache": "^1.3.5"
+	},
+	"devDependencies": {
+		"@cedx/coveralls": "^10.0.0",
+		"@zeit/ncc": "^0.22.1",
+		"c8": "^7.1.2"
+	},
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"files": [
+		"lib/"
+	],
+	"funding": {
+		"type": "patreon",
+		"url": "https://www.patreon.com/cedx"
+	},
+	"keywords": [
+		"action",
+		"ci",
+		"dart",
+		"github",
+		"sdk",
+		"test",
+		"workflow"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://git.belin.io/cedx/setup-dart.git"
+	},
+	"scripts": {
+		"coverage": "coveralls var/lcov.info",
+		"prepack": "pwsh tool/dist.ps1",
+		"test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
+	}
 }
