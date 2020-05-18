@@ -29,6 +29,10 @@
 	"engines": {
 		"node": ">=12.0.0"
 	},
+	"exports": {
+		"import": "lib/index.mjs",
+		"require": "lib/index.js"
+	},
 	"files": [
 		"lib/"
 	],
@@ -52,6 +56,6 @@
 	"scripts": {
 		"coverage": "coveralls var/lcov.info",
 		"prepack": "pwsh tool/dist.ps1",
-		"test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
+		"test": "c8 --all --include=lib/*.js --report-dir=var --reporter=lcovonly var/tests.js"
 	}
 }
