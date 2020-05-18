@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [2.0.0](https://git.belin.io/cedx/setup-dart/compare/v1.4.0...v2.0.0)
+- Breaking change: ported the source code to [Haxe](https://haxe.org).
+- Updated the package dependencies.
+
 ## Version [1.4.0](https://git.belin.io/cedx/setup-dart/compare/v1.3.0...v1.4.0)
 - Changed the way the action is packaged.
 - Replaced [Gulp](https://gulpjs.com) by [PowerShell](https://docs.microsoft.com/en-us/powershell) scripts for the build system.
