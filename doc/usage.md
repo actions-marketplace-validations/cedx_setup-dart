@@ -33,7 +33,8 @@ Allowed values are:
 ### Basic
 Setup a specific version of the Dart SDK:
 
-<pre><code>steps:
+``` yaml
+steps:
 	- uses: cedx/setup-dart&commat;v2
 		with:
 			architecture: x64
@@ -41,7 +42,8 @@ Setup a specific version of the Dart SDK:
 			version: 2.9.0-3.0.dev
 	- uses: actions/checkout&commat;v2
 	- run: pub get
-	- run: pub run test</code></pre>
+	- run: pub run test
+```
 
 !!! tip
 	A sample workflow can be found in the [`build.yaml`](https://git.belin.io/cedx/setup-dart/src/branch/master/example/build.yaml) file.
@@ -49,7 +51,8 @@ Setup a specific version of the Dart SDK:
 ### Matrix
 Setup multiple versions of the Dart SDK on multiple operating systems:
 
-<pre><code>jobs:
+``` yaml
+jobs:
 	test:
 		name: Dart SDK ${{matrix.sdk}} on ${{matrix.os}}
 		runs-on: ${{matrix.os}}
@@ -63,4 +66,5 @@ Setup multiple versions of the Dart SDK on multiple operating systems:
 					release-channel: ${{matrix.sdk}}
 			- uses: actions/checkout&commat;v2
 			- run: pub get
-			- run: pub run test</code></pre>
+			- run: pub run test
+```
