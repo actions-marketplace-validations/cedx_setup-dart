@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Dart
-        uses: cedx/setup-dart@v1
+        uses: cedx/setup-dart@v2
         with:
           architecture: x64
           release-channel: stable

@@ -11,7 +11,7 @@ If you haven't used GitHub Actions before, be sure to check out the [related doc
 Setup the Dart SDK in a workflow:
 
 <pre><code>steps:
-	- uses: cedx/setup-dart&commat;v1
+	- uses: cedx/setup-dart&commat;v2
 	- run: pub get
 	- run: pub run test</code></pre>
 
