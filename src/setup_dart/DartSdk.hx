@@ -3,9 +3,11 @@ package setup_dart;
 import externs.Action;
 import externs.ToolCache;
 import haxe.io.Path;
+import js.lib.Object;
 import js.lib.Promise;
 import js.node.Fs;
 import js.node.util.Promisify.promisify;
+import js.Syntax;
 
 using StringTools;
 
@@ -67,6 +69,12 @@ class DartSdk {
 		}
 
 		return promise.then(sdkDir -> Action.addPath(Path.join([sdkDir, "bin"]))); 
+	}
+	
+	/** Initializes the class prototype. **/
+	static function __init__(): Void {
+		var proto = Syntax.field(DartSdk, "prototype");
+		Object.defineProperty(proto, "releaseUrl", {get: proto.get_releaseUrl});
 	}
 }
 
