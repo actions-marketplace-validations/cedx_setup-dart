@@ -12,7 +12,7 @@ Setup the Dart SDK in a workflow:
 
 ``` yaml
 steps:
-	- uses: cedx/setup-dart&commat;v2
+	- uses: cedx/setup-dart@v2
 	- run: pub get
 	- run: pub run test
 ```
