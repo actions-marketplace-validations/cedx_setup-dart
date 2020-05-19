@@ -22,9 +22,7 @@
 		"@actions/tool-cache": "^1.3.5"
 	},
 	"devDependencies": {
-		"@cedx/coveralls": "^10.0.0",
-		"@zeit/ncc": "^0.22.1",
-		"c8": "^7.1.2"
+		"@zeit/ncc": "^0.22.1"
 	},
 	"engines": {
 		"node": ">=12.0.0"
@@ -54,8 +52,7 @@
 		"url": "https://git.belin.io/cedx/setup-dart.git"
 	},
 	"scripts": {
-		"coverage": "coveralls var/lcov.info",
 		"prepack": "pwsh tool/dist.ps1",
-		"test": "c8 --report-dir=var --reporter=lcovonly node var/tests.js"
+		"test": "node var/tests.js"
 	}
 }

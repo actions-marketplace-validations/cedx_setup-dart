@@ -32,8 +32,3 @@ jobs:
         run: |
           haxe test.hxml
           npm test
-      - name: Collect code coverage
-        env:
-          COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        if: success()
-        run: npm run-script coverage
