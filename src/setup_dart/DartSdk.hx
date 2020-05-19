@@ -58,8 +58,8 @@ class DartSdk {
 	public function install(): Promise<Void> {
 		var sdkDir = version != "latest" ? ToolCache.find("dart-sdk", version, architecture) : "";
 
-		var promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
-			var readFile = promisify(Fs.readFile);
+		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
+			final readFile = promisify(Fs.readFile);
 			download()
 				.then(function(output) { sdkDir = output; return readFile(Path.join([sdkDir, "version"]), "utf8"); })
 				.then(content -> version = content.trim())

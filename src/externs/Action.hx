@@ -3,7 +3,7 @@ package externs;
 import haxe.extern.EitherType;
 import js.lib.Error;
 
-/** Core functions for setting results, logging, registering secrets and exporting variables across actions. **/
+/** Functions for setting results, logging, registering secrets and exporting variables across actions. **/
 @:jsRequire("@actions/core")
 extern class Action {
 

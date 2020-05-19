@@ -4,4 +4,4 @@
 --define js-es=6
 --js lib/setup_dart.js
 --library hxnodejs
---main setup_dart.Program
+--main Program
