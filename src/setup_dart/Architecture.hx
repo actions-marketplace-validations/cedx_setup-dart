@@ -1,7 +1,7 @@
 package setup_dart;
 
 /** Defines the processor architecture of the Dart SDK. **/
-enum abstract Architecture(String) to String {
+enum abstract Architecture(String) from String to String {
 
 	/** Specifies a 32-bit ARM architecture. **/
 	var arm;
