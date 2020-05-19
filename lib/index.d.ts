@@ -1,2 +1,16 @@
-export * from "./dart_sdk.js";
-export * from "./main.js";
+export declare class DartSdk {
+	static readonly downloadUrlPattern: string;
+	constructor(options?: Partial<DartSdkOptions>);
+	architecture: string;
+	releaseChannel: string;
+	readonly releaseUrl: string;
+	version: string;
+	download(): Promise<string>;
+	install(): Promise<void>;
+}
+
+export interface DartSdkOptions {
+	architecture: string;
+	releaseChannel: string;
+	version: string;
+}
