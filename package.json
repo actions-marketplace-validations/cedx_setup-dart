@@ -56,6 +56,6 @@
 	"scripts": {
 		"coverage": "coveralls var/lcov.info",
 		"prepack": "pwsh tool/dist.ps1",
-		"test": "c8 --all --include=lib/*.js --report-dir=var --reporter=lcovonly var/tests.js"
+		"test": "c8 --report-dir=var --reporter=lcovonly node var/tests.js"
 	}
 }

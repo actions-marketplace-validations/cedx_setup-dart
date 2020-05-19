@@ -61,8 +61,8 @@ class DartSdk {
 		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
 			final readFile = promisify(Fs.readFile);
 			download()
-				.then(function(output) { sdkDir = output; return readFile(Path.join([sdkDir, "version"]), "utf8"); })
-				.then(content -> version = content.trim())
+				.then(output -> { sdkDir = output; readFile(Path.join([sdkDir, "version"]), "utf8"); })
+				.then((content: String) -> version = content.rtrim())
 				.then(_ -> ToolCache.cacheDir(sdkDir, "dart-sdk", version, architecture));
 		}
 
