@@ -36,7 +36,7 @@ Setup a specific version of the Dart SDK:
 ``` yaml
 steps:
 	- uses: cedx/setup-dart@v2
-		with:
+	  with:
 			architecture: x64
 			release-channel: dev
 			version: 2.9.0-3.0.dev
@@ -62,7 +62,7 @@ jobs:
 				sdk: [beta, dev, stable]
 		steps:
 			- uses: cedx/setup-dart@v2
-				with:
+			  with:
 					release-channel: ${{matrix.sdk}}
 			- uses: actions/checkout@v2
 			- run: pub get
