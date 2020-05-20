@@ -53,8 +53,9 @@ class DartSdk {
 		Downloads and extracts the ZIP archive corresponding to this Dart SDK release.
 	  Returns the path to the extracted directory.
 	**/
-	public function download(): Promise<String>
+	public function download(): Promise<String> {
 		return ToolCache.downloadTool(releaseUrl).then(file -> ToolCache.extractZip(file)).then(path -> Path.join([path, "dart-sdk"]));
+	}
 
 	/** Installs this Dart SDK, after downloading it if required. **/
 	public function install(): Promise<Void> {
