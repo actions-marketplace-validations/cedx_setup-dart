@@ -1,3 +1,5 @@
+import mcover.coverage.MCoverage;
+import mcover.coverage.client.LcovPrintClient;
 import setup_dart.*;
 import utest.UTest;
 
@@ -7,5 +9,9 @@ class TestAll {
 	/** Application entry point. **/
 	static function main(): Void {
 		UTest.run([new DartSdkTest()]);
+
+		var logger = MCoverage.getLogger();
+		logger.addClient(new LcovPrintClient("setup_dart", "var/lcov.info"));
+		logger.report();
 	}
 }

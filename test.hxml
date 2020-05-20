@@ -3,5 +3,7 @@
 --define js-es=6
 --js var/tests.js
 --library hxnodejs
+--library mcover
 --library utest
+--macro mcover.MCover.coverage([''], ['src'])
 --main TestAll
