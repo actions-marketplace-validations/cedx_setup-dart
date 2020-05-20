@@ -3,11 +3,11 @@ package setup_dart;
 import externs.Action;
 import externs.ToolCache;
 import haxe.io.Path;
+import js.Syntax;
 import js.lib.Object;
 import js.lib.Promise;
 import js.node.Fs;
 import js.node.util.Promisify.promisify;
-import js.Syntax;
 
 using StringTools;
 
