@@ -5,7 +5,7 @@
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"license": "MIT",
 	"name": "setup_dart",
-	"releasenote": "Fixed the packaging.",
+	"releasenote": "Fixed the npm packaging, updated the documentation, updated the package dependencies.",
 	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
 	"url": "https://docs.belin.io/setup-dart",
 	"version": "2.1.0"
