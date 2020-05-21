@@ -1,5 +1,10 @@
 # Changelog
 
+## Version [2.1.0](https://git.belin.io/cedx/setup-dart/compare/v2.0.0...v2.1.0)
+- Fixed the [npm](https://www.npmjs.com) packaging.
+- Updated the documentation.
+- Updated the package dependencies.
+
 ## Version [2.0.0](https://git.belin.io/cedx/setup-dart/compare/v1.4.0...v2.0.0)
 - Breaking change: ported the source code to [Haxe](https://haxe.org).
 - Updated the package dependencies.
