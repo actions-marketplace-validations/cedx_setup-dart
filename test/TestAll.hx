@@ -10,7 +10,7 @@ class TestAll {
 	static function main(): Void {
 		UTest.run([new DartSdkTest()]);
 
-		var logger = MCoverage.getLogger();
+		final logger = MCoverage.getLogger();
 		logger.addClient(new LcovPrintClient("setup_dart", "var/lcov.info"));
 		logger.report();
 	}
