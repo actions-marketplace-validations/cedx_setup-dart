@@ -4,14 +4,14 @@
 --library hxnodejs
 
 --each
+--dce full
+--js bin/setup_dart.js
+--main Program
+
+--next
 --js lib/setup_dart.js
 
 setup_dart.Architecture
 setup_dart.DartSdk
 setup_dart.Platform
 setup_dart.ReleaseChannel
-
---next
---dce full
---js bin/setup_dart.js
---main Program
