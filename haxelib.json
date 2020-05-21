@@ -1,12 +1,12 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"hxnodejs": "12.0.0"},
+	"dependencies": {"hxnodejs": "12.1.0"},
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"license": "MIT",
 	"name": "setup_dart",
 	"releasenote": "Fixed the packaging.",
 	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
 	"url": "https://docs.belin.io/setup-dart",
-	"version": "2.0.0"
+	"version": "2.1.0"
 }
