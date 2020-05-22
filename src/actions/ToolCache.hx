@@ -1,4 +1,4 @@
-package externs;
+package actions;
 
 import js.lib.Promise;
 

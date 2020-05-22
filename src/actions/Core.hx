@@ -1,11 +1,11 @@
-package externs;
+package actions;
 
 import haxe.extern.EitherType;
 import js.lib.Error;
 
 /** Functions for setting results, logging, registering secrets and exporting variables across actions. **/
 @:jsRequire("@actions/core")
-extern class Action {
+extern class Core {
 
 	/** Prepends the given input `path` to the jobs `PATH`. **/
 	static function addPath(path: String): Void;

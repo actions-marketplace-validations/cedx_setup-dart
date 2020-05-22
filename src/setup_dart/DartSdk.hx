@@ -1,7 +1,7 @@
 package setup_dart;
 
-import externs.Action;
-import externs.ToolCache;
+import actions.Core;
+import actions.ToolCache;
 import haxe.io.Path;
 import js.Syntax;
 import js.lib.Object;
@@ -68,7 +68,7 @@ class DartSdk {
 				.then(_ -> ToolCache.cacheDir(sdkDir, "dart-sdk", version, architecture));
 		}
 
-		return promise.then(sdkDir -> Action.addPath(Path.join([sdkDir, "bin"]))); 
+		return promise.then(sdkDir -> Core.addPath(Path.join([sdkDir, "bin"]))); 
 	}
 	
 	/** Initializes the class prototype. **/
