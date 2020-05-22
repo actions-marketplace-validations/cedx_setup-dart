@@ -71,7 +71,7 @@ class DartSdk {
 		return promise.then(sdkDir -> Core.addPath(Path.join([sdkDir, "bin"]))); 
 	}
 	
-	/** Initializes the class prototype. **/
+	/** Initializes the class. **/
 	static function __init__(): Void {
 		var proto = Syntax.field(DartSdk, "prototype");
 		Object.defineProperty(proto, "releaseUrl", {get: proto.get_releaseUrl});
