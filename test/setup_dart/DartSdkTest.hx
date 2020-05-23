@@ -28,6 +28,7 @@ using StringTools;
 		// It should point, by default, to the latest stable release.
 		var dartSdk = new DartSdk();
 		var urlPattern = "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip";
+
 		if (sysName == "Mac") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.macos));
 		else if (sysName == "Windows") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.windows));
 		else asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.linux));
@@ -35,6 +36,7 @@ using StringTools;
 		// It should point to a valid Dart SDK release.
 		var dartSdk = new DartSdk({architecture: Architecture.ia32, releaseChannel: ReleaseChannel.dev, version: "12.34.56-dev.7.8"});
 		var urlPattern = "https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip";
+		
 		if (sysName == "Mac") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.macos));
 		else if (sysName == "Windows") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.windows));
 		else asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.linux));
