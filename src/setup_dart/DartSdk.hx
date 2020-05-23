@@ -73,7 +73,7 @@ class DartSdk {
 	
 	/** Initializes the class. **/
 	static function __init__(): Void {
-		var proto = Syntax.field(DartSdk, "prototype");
+		final proto = Syntax.field(DartSdk, "prototype");
 		Object.defineProperty(proto, "releaseUrl", {get: proto.get_releaseUrl});
 	}
 }
