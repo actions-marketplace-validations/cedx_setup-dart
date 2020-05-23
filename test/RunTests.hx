@@ -9,10 +9,7 @@ class RunTests {
 
 	/** Application entry point. **/
 	static function main(): Void {
-		final tests = TestBatch.make([
-			new DartSdkTest()
-		]);
-
+		final tests = TestBatch.make([new DartSdkTest()]);
 		Runner.run(tests).handle(result -> {
 			final logger = MCoverage.getLogger();
 			logger.addClient(new LcovPrintClient("lcov", "var/lcov.info"));
