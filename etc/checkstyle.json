@@ -10,7 +10,7 @@
 		{"type": "DefaultComesLast"},
 		{"type": "HiddenField"},
 		{"type": "MultipleVariableDeclarations"},
-		{"type": "NestedControlFlow", "props": {"max": 5}},
+		{"type": "NestedControlFlow"},
 		{"type": "NestedForDepth"},
 		{"type": "NestedIfDepth"},
 		{"type": "NestedTryDepth"},
