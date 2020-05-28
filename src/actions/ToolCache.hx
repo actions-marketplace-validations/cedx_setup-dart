@@ -5,8 +5,8 @@ import js.lib.Promise;
 /** Functions necessary for downloading and caching tools. **/
 @:jsRequire("@actions/tool-cache")
 extern class ToolCache {
-	
-	/** 
+
+	/**
 		Caches a downloaded `directory` and installs it into the tool cache directory.
 		Returns the path of the location where the directory was cached.
 	**/

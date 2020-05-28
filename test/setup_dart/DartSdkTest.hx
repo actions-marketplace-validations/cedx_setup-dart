@@ -36,7 +36,7 @@ using StringTools;
 		// It should point to a valid Dart SDK release.
 		dartSdk = new DartSdk({architecture: Architecture.ia32, releaseChannel: ReleaseChannel.dev, version: "12.34.56-dev.7.8"});
 		urlPattern = "https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip";
-		
+
 		if (sysName == "Mac") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.macos));
 		else if (sysName == "Windows") asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.windows));
 		else asserts.assert(dartSdk.releaseUrl == urlPattern.replace("{platform}", Platform.linux));
@@ -52,7 +52,7 @@ using StringTools;
 			.then(sdkDir -> {
 				final executable = Sys.systemName() == "Windows" ? "dart.exe" : "dart";
 				asserts.assert(FileSystem.exists('$sdkDir/bin/$executable'));
-				return sdkDir;
+				sdkDir;
 			})
 			.then(sdkDir -> {
 				asserts.assert(File.getContent('$sdkDir/version').rtrim() == "2.7.0");

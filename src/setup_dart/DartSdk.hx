@@ -54,23 +54,26 @@ class DartSdk {
 	  Returns the path to the extracted directory.
 	**/
 	public function download(): Promise<String>
-		return ToolCache.downloadTool(releaseUrl).then(file -> ToolCache.extractZip(file)).then(path -> Path.join([path, "dart-sdk"]));
+		return ToolCache.downloadTool(releaseUrl)
+			.then(file -> ToolCache.extractZip(file))
+			.then(path -> Path.join([path, "dart-sdk"]));
 
 	/** Installs this Dart SDK, after downloading it if required. **/
 	public function install(): Promise<Void> {
-		var sdkDir = version != "latest" ? ToolCache.find("dart-sdk", version, architecture) : "";
+		final toolName = "dart-sdk";
+		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
 
 		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
 			final readFile = promisify(Fs.readFile);
 			download()
-				.then(output -> { sdkDir = output; readFile(Path.join([sdkDir, "version"]), "utf8"); })
-				.then((content: String) -> version = content.rtrim())
-				.then(_ -> ToolCache.cacheDir(sdkDir, "dart-sdk", version, architecture));
+				.then(output -> readFile(Path.join([sdkDir = output, "version"]), "utf8"))
+				.then(content -> version = content.rtrim())
+				.then(_ -> ToolCache.cacheDir(sdkDir, toolName, version, architecture));
 		}
 
-		return promise.then(sdkDir -> Core.addPath(Path.join([sdkDir, "bin"]))); 
+		return promise.then(sdkDir -> Core.addPath(Path.join([sdkDir, "bin"])));
 	}
-	
+
 	/** Initializes the class. **/
 	static function __init__(): Void {
 		final proto = Syntax.field(DartSdk, "prototype");
