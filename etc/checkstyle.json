@@ -56,7 +56,7 @@
 		{"type": "FileLength"},
 		{"type": "LineLength"},
 		{"type": "MethodCount"},
-		{"type": "MethodLength", "props": {"max": 100}},
+		{"type": "MethodLength"},
 		{"type": "ParameterNumber"},
 
 		{"type": "Anonymous"},

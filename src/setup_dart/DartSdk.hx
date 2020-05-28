@@ -67,7 +67,7 @@ class DartSdk {
 			final readFile = promisify(Fs.readFile);
 			download()
 				.then(output -> readFile(Path.join([sdkDir = output, "version"]), "utf8"))
-				.then(content -> version = content.rtrim())
+				.then(content -> version = (content: String).rtrim())
 				.then(_ -> ToolCache.cacheDir(sdkDir, toolName, version, architecture));
 		}
 
