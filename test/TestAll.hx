@@ -8,10 +8,14 @@ class TestAll {
 
 	/** Application entry point. **/
 	static function main(): Void {
-		UTest.run([new DartSdkTest()]);
+		final tests = [
+			new DartSdkTest()
+		];
 
-		final logger = MCoverage.getLogger();
-		logger.addClient(new LcovPrintClient("setup_dart", "var/lcov.info"));
-		logger.report();
+		UTest.run(tests, () -> {
+			final logger = MCoverage.getLogger();
+			logger.addClient(new LcovPrintClient("setup_dart", "var/lcov.info"));
+			logger.report();
+		});
 	}
 }
