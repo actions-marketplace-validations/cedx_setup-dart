@@ -4,8 +4,6 @@
 --js var/tests.js
 --library hxnodejs
 --library mcover
---library tink_core
---library tink_testrunner
---library tink_unittest
+--library utest
 --macro mcover.MCover.coverage([''], ['src'])
---main RunTests
+--main TestAll
