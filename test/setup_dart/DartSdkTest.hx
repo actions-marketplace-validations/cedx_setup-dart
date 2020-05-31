@@ -12,9 +12,6 @@ using StringTools;
 /** Tests the features of the `DartSdk` class. **/
 class DartSdkTest extends Test {
 
-	/** Creates a new test suite. **/
-	//function new() {}
-
 	/** Method invoked before each test. **/
 	function setup(): Void {
 		if (Sys.getEnv("RUNNER_TEMP") == null) Sys.putEnv("RUNNER_TEMP", "var/tests/temp");
