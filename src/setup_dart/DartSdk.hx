@@ -7,7 +7,7 @@ import js.Syntax;
 import js.lib.Object;
 import js.lib.Promise;
 import js.node.Fs;
-import js.node.util.Promisify.promisify;
+import js.node.Util;
 
 using StringTools;
 
@@ -64,7 +64,7 @@ class DartSdk {
 		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
 
 		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
-			final readFile = promisify(Fs.readFile);
+			final readFile = Util.promisify(Fs.readFile);
 			download()
 				.then(output -> readFile(Path.join([sdkDir = output, "version"]), "utf8"))
 				.then(content -> version = (content: String).rtrim())
