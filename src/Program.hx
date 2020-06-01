@@ -1,5 +1,5 @@
-import actions.Core;
-import js.Node;
+import actions.Core.*;
+import js.Node.process;
 import setup_dart.DartSdk;
 import setup_dart.ReleaseChannel;
 
@@ -8,17 +8,16 @@ class Program {
 
 	/** Application entry point. **/
 	static function main(): Void {
-		var architecture = Core.getInput("architecture");
-		if (architecture.length == 0) architecture = Node.process.arch;
+		var architecture = getInput("architecture");
+		if (architecture.length == 0) architecture = process.arch;
 
-		var releaseChannel = Core.getInput("release-channel");
+		var releaseChannel = getInput("release-channel");
 		if (releaseChannel.length == 0) releaseChannel = ReleaseChannel.stable;
 
-		var version = Core.getInput("version");
+		var version = getInput("version");
 		if (version.length == 0) version = "latest";
 
-		new DartSdk({architecture: architecture, releaseChannel: releaseChannel, version: version})
-			.install()
-			.catchError(Core.setFailed);
+		final options = {architecture: architecture, releaseChannel: releaseChannel, version: version};
+		new DartSdk(options).install().catchError(setFailed);
 	}
 }
