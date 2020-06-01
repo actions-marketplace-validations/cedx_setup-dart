@@ -18,6 +18,6 @@ class Program {
 		if (version.length == 0) version = "latest";
 
 		final options = {architecture: architecture, releaseChannel: releaseChannel, version: version};
-		new DartSdk(options).install().catchError(setFailed);
+		new DartSdk(options).install().catchError(error -> setFailed(error.message));
 	}
 }
