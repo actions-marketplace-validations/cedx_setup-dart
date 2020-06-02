@@ -44,7 +44,7 @@ class DartSdk {
 		final sysName = Sys.systemName();
 		return downloadUrlPattern
 			.replace("{architecture}", architecture)
-			.replace("{platform}", sysName == "Windows" ? Platform.windows : (sysName == "Mac" ? Platform.macos : Platform.linux))
+			.replace("{platform}", if (sysName == "Windows") Platform.windows else sysName == "Mac" ? Platform.macos : Platform.linux)
 			.replace("{releaseChannel}", releaseChannel)
 			.replace("{version}", version);
 	}
