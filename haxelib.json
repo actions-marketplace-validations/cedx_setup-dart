@@ -4,7 +4,6 @@
 	"dependencies": {"hxnodejs": "12.1.0"},
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"license": "MIT",
-	"main": "setup_dart.Program",
 	"name": "setup_dart",
 	"releasenote": "Fixed the npm packaging, updated the documentation, updated the package dependencies.",
 	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
