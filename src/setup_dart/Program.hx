@@ -1,3 +1,5 @@
+package setup_dart;
+
 import actions.Core.*;
 import js.Node.process;
 import setup_dart.DartSdk;

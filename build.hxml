@@ -6,7 +6,7 @@
 --each
 --dce full
 --js bin/setup_dart.js
---main Program
+--main setup_dart.Program
 
 --next
 --js lib/setup_dart.js
