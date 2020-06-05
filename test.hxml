@@ -1,5 +1,6 @@
 --class-path src
 --class-path test
+--debug
 --define js-es=6
 --js var/tests.js
 --library hxnodejs
