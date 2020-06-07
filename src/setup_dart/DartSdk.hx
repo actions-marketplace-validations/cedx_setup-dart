@@ -40,7 +40,7 @@ class DartSdk {
 	}
 
 	/** Gets the URL of the ZIP archive corresponding to this Dart SDK. **/
-	function get_releaseUrl(): String {
+	function get_releaseUrl() {
 		final sysName = Sys.systemName();
 		return downloadUrlPattern
 			.replace("{architecture}", architecture)
@@ -75,7 +75,7 @@ class DartSdk {
 	}
 
 	/** Initializes the class. **/
-	static function __init__(): Void {
+	static function __init__() {
 		final dartSdkProto = Syntax.field(DartSdk, "prototype");
 		Object.defineProperty(dartSdkProto, "releaseUrl", {get: dartSdkProto.get_releaseUrl});
 	}

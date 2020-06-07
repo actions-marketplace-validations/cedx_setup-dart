@@ -13,13 +13,13 @@ using StringTools;
 class DartSdkTest extends Test {
 
 	/** Method invoked before each test. **/
-	function setup(): Void {
+	function setup() {
 		if (Sys.getEnv("RUNNER_TEMP") == null) Sys.putEnv("RUNNER_TEMP", "var/tests/temp");
 		if (Sys.getEnv("RUNNER_TOOL_CACHE") == null) Sys.putEnv("RUNNER_TOOL_CACHE", "var/tests/cache");
 	}
 
 	/** Tests the `releaseUrl` property. **/
-	function testReleaseUrl(): Void {
+	function testReleaseUrl() {
 		final sysName = Sys.systemName();
 
 		// It should point, by default, to the latest stable release.
@@ -41,7 +41,7 @@ class DartSdkTest extends Test {
 
 	/** Tests the `download()` method. **/
 	@:timeout(180000)
-	function testDownload(async: Async): Void {
+	function testDownload(async: Async) {
 		// It should properly download and extract the Dart SDK.
 		new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.7.0"})
 			.download()
@@ -58,7 +58,7 @@ class DartSdkTest extends Test {
 
 	/** Tests the `install()` method. **/
 	@:timeout(180000)
-	function testInstall(async: Async): Void {
+	function testInstall(async: Async) {
 		// It should add the Dart SDK binaries to the PATH environment variable.
 		final dartSdk = new DartSdk();
 		dartSdk.install().then(_ -> {

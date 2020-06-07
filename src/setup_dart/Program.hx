@@ -9,7 +9,7 @@ import setup_dart.ReleaseChannel;
 class Program {
 
 	/** Application entry point. **/
-	static function main(): Void {
+	static function main() {
 		var architecture = getInput("architecture");
 		if (architecture.length == 0) architecture = process.arch;
 

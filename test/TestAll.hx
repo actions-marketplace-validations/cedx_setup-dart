@@ -13,7 +13,7 @@ class TestAll {
 	];
 
 	/** Application entry point. **/
-	static function main(): Void {
+	static function main() {
 		final runner = new Runner();
 		runner.onComplete.add(_ -> {
 			final logger = MCoverage.getLogger();
