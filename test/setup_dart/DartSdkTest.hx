@@ -43,15 +43,15 @@ class DartSdkTest extends Test {
 	@:timeout(180000)
 	function testDownload(async: Async) {
 		// It should properly download and extract the Dart SDK.
-		new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.7.0"})
-			.download()
+		new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.7.0"}).download()
 			.then(sdkDir -> {
 				final executable = Sys.systemName() == "Windows" ? "dart.exe" : "dart";
 				Assert.isTrue(FileSystem.exists('$sdkDir/bin/$executable'));
-				sdkDir;
-			})
-			.then(sdkDir -> {
 				Assert.equals("2.7.0", File.getContent('$sdkDir/version').rtrim());
+				async.done();
+			})
+			.catchError(e -> {
+				Assert.fail(e.message);
 				async.done();
 			});
 	}
@@ -61,10 +61,15 @@ class DartSdkTest extends Test {
 	function testInstall(async: Async) {
 		// It should add the Dart SDK binaries to the PATH environment variable.
 		final dartSdk = new DartSdk();
-		dartSdk.install().then(_ -> {
-			final path = Path.normalize('/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin');
-			Assert.isTrue(Sys.getEnv("PATH").contains(path));
-			async.done();
-		});
+		dartSdk.install()
+			.then(_ -> {
+				final path = Path.normalize('/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin');
+				Assert.isTrue(Sys.getEnv("PATH").contains(path));
+				async.done();
+			})
+			.catchError(e -> {
+				Assert.fail(e.message);
+				async.done();
+			});
 	}
 }
