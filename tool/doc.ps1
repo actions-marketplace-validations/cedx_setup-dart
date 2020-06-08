@@ -7,7 +7,7 @@ haxe --define doc-gen --xml var/api.xml build.hxml
 haxelib run dox `
 	--define description "Set up your GitHub Actions workflow with a specific version of the Dart SDK." `
 	--define logo "https://api.belin.io/setup-dart/favicon.ico" `
-	--define source-path "https://git.belin.io/cedx/setup-dart/src/branch/master/src" `
+	--define source-path "https://git.belin.io/cedx/setup-dart/src/branch/main/src" `
 	--define themeColor 0xffec3d `
 	--define version $version `
 	--define website "https://belin.io" `
