@@ -59,7 +59,7 @@ class DartSdk {
 			.then(path -> Path.join([path, "dart-sdk"]));
 
 	/** Installs this Dart SDK, after downloading it if required. **/
-	public function install(): Promise<Void> {
+	public function install(): Promise<Any> {
 		final toolName = "dart-sdk";
 		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
 
