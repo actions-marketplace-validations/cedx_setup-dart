@@ -51,7 +51,7 @@ class DartSdkTest extends Test {
 				async.done();
 			})
 			.catchError(e -> {
-				Assert.fail(e.message);
+				Assert.fail(Std.string(e));
 				async.done();
 			});
 	}
@@ -68,7 +68,7 @@ class DartSdkTest extends Test {
 				async.done();
 			})
 			.catchError(e -> {
-				Assert.fail(e.message);
+				Assert.fail(Std.string(e));
 				async.done();
 			});
 	}
