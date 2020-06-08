@@ -2,8 +2,6 @@ package setup_dart;
 
 import actions.Core.*;
 import js.Node.process;
-import setup_dart.DartSdk;
-import setup_dart.ReleaseChannel;
 
 /** Sets up the Dart SDK. **/
 class Program {
