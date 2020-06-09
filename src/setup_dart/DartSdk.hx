@@ -58,8 +58,11 @@ class DartSdk {
 			.then(file -> ToolCache.extractZip(file))
 			.then(path -> Path.join([path, "dart-sdk"]));
 
-	/** Installs this Dart SDK, after downloading it if required. **/
-	public function install(): Promise<Any> {
+	/**
+		Installs this Dart SDK, after downloading it if required.
+	  Returns the path to the install directory.
+	**/
+	public function install(): Promise<String> {
 		final toolName = "dart-sdk";
 		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
 
@@ -71,7 +74,10 @@ class DartSdk {
 				.then(_ -> ToolCache.cacheDir(sdkDir, toolName, version, architecture));
 		}
 
-		return promise.then(sdkDir -> Core.addPath(Path.join([sdkDir, "bin"])));
+		return promise.then(sdkDir -> {
+			Core.addPath(Path.join([sdkDir, "bin"]));
+			sdkDir;
+		});
 	}
 
 	/** Initializes the class. **/

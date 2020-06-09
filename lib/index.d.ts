@@ -6,7 +6,7 @@ export declare class DartSdk {
 	readonly releaseUrl: string;
 	version: string;
 	download(): Promise<string>;
-	install(): Promise<void>;
+	install(): Promise<string>;
 }
 
 export interface DartSdkOptions {

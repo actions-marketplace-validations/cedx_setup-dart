@@ -8,6 +8,7 @@ import utest.Async;
 import utest.Test;
 
 using StringTools;
+using thenshim.PromiseTools;
 
 /** Tests the features of the `DartSdk` class. **/
 class DartSdkTest extends Test {
@@ -48,12 +49,9 @@ class DartSdkTest extends Test {
 				final executable = Sys.systemName() == "Windows" ? "dart.exe" : "dart";
 				Assert.isTrue(FileSystem.exists('$sdkDir/bin/$executable'));
 				Assert.equals("2.7.0", File.getContent('$sdkDir/version').rtrim());
-				async.done();
 			})
-			.catchError(e -> {
-				Assert.fail(Std.string(e));
-				async.done();
-			});
+			.catchError(e -> Assert.fail(Std.string(e)))
+			.finally(() -> async.done());
 	}
 
 	/** Tests the `install()` method. **/
@@ -65,11 +63,8 @@ class DartSdkTest extends Test {
 			.then(_ -> {
 				final path = Path.normalize('/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin');
 				Assert.isTrue(Sys.getEnv("PATH").contains(path));
-				async.done();
 			})
-			.catchError(e -> {
-				Assert.fail(Std.string(e));
-				async.done();
-			});
+			.catchError(e -> Assert.fail(Std.string(e)))
+			.finally(() -> async.done());
 	}
 }

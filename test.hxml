@@ -4,6 +4,7 @@
 --js var/tests.js
 --library hxnodejs
 --library mcover
+--library thenshim
 --library utest
 --macro mcover.MCover.coverage([''], ['src'])
 --main TestAll
