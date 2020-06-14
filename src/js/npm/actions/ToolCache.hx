@@ -1,4 +1,4 @@
-package actions;
+package js.npm.actions;
 
 import js.lib.Promise;
 

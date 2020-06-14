@@ -1,4 +1,4 @@
-package actions;
+package js.npm.actions;
 
 import haxe.extern.EitherType;
 import js.lib.Error;

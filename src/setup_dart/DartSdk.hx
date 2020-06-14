@@ -1,13 +1,13 @@
 package setup_dart;
 
-import actions.Core;
-import actions.ToolCache;
 import haxe.io.Path;
 import js.Syntax;
 import js.lib.Object;
 import js.lib.Promise;
 import js.node.Fs;
 import js.node.Util;
+import js.npm.actions.Core;
+import js.npm.actions.ToolCache;
 
 using StringTools;
 
