@@ -1,6 +1,6 @@
 package setup_dart;
 
-import haxe.io.Path;
+import js.node.Path;
 import sys.FileSystem;
 import sys.io.File;
 import utest.Assert;

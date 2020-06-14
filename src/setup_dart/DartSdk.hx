@@ -1,10 +1,10 @@
 package setup_dart;
 
-import haxe.io.Path;
 import js.Syntax;
 import js.lib.Object;
 import js.lib.Promise;
 import js.node.Fs;
+import js.node.Path;
 import js.node.Util;
 import js.npm.actions.Core;
 import js.npm.actions.ToolCache;
@@ -56,7 +56,7 @@ class DartSdk {
 	public function download(): Promise<String>
 		return ToolCache.downloadTool(releaseUrl)
 			.then(file -> ToolCache.extractZip(file))
-			.then(path -> Path.join([path, "dart-sdk"]));
+			.then(path -> Path.join(path, "dart-sdk"));
 
 	/**
 		Installs this Dart SDK, after downloading it if required.
@@ -69,13 +69,13 @@ class DartSdk {
 		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
 			final readFile = Util.promisify(Fs.readFile);
 			download()
-				.then(output -> readFile(Path.join([sdkDir = output, "version"]), "utf8"))
+				.then(output -> readFile(Path.join(sdkDir = output, "version"), "utf8"))
 				.then(content -> version = (content: String).rtrim())
 				.then(_ -> ToolCache.cacheDir(sdkDir, toolName, version, architecture));
 		}
 
 		return promise.then(sdkDir -> {
-			Core.addPath(Path.join([sdkDir, "bin"]));
+			Core.addPath(Path.join(sdkDir, "bin"));
 			sdkDir;
 		});
 	}
