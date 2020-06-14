@@ -1,23 +1,23 @@
 package setup_dart;
 
-import js.npm.actions.Core.*;
-import js.Node.process;
+import js.npm.actions.Core;
+import js.Node;
 
 /** Sets up the Dart SDK. **/
 class Program {
 
 	/** Application entry point. **/
 	static function main() {
-		var architecture = getInput("architecture");
-		if (architecture.length == 0) architecture = process.arch;
+		var architecture = Core.getInput("architecture");
+		if (architecture.length == 0) architecture = Node.process.arch;
 
-		var releaseChannel = getInput("release-channel");
+		var releaseChannel = Core.getInput("release-channel");
 		if (releaseChannel.length == 0) releaseChannel = ReleaseChannel.stable;
 
-		var version = getInput("version");
+		var version = Core.getInput("version");
 		if (version.length == 0) version = "latest";
 
 		final options = {architecture: architecture, releaseChannel: releaseChannel, version: version};
-		new DartSdk(options).install().catchError(setFailed);
+		new DartSdk(options).install().catchError(Core.setFailed);
 	}
 }
