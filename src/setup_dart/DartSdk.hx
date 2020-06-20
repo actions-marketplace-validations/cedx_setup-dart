@@ -6,8 +6,8 @@ import js.lib.Promise;
 import js.node.Fs;
 import js.node.Path;
 import js.node.Util;
-import js.npm.actions.Core;
-import js.npm.actions.ToolCache;
+import js.npm.actions.core.Core;
+import js.npm.actions.tool_cache.ToolCache;
 
 using StringTools;
 
