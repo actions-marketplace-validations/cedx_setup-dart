@@ -1,6 +1,6 @@
 package setup_dart;
 
-import js.npm.actions.core.Core;
+import js.npm.actions.Core;
 import js.Node;
 
 /** Sets up the Dart SDK. **/

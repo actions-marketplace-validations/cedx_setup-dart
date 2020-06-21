@@ -1,4 +1,4 @@
-package js.npm.actions.tool_cache;
+package js.npm.actions;
 
 import js.lib.Promise;
 
