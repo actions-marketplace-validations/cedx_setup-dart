@@ -10,7 +10,6 @@
 
 --next
 --js lib/setup_dart.js
-
 setup_dart.Architecture
 setup_dart.DartSdk
 setup_dart.Platform
