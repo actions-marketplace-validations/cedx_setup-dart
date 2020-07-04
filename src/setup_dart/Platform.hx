@@ -4,11 +4,11 @@ package setup_dart;
 enum abstract Platform(String) from String to String {
 
 	/** Specifies a Linux platform. **/
-	var linux;
+	var Linux = "linux";
 
 	/** Specifies a macOS platform. **/
-	var macos;
+	var MacOS = "macos";
 
 	/** Specifies a Windows platform. **/
-	var windows;
+	var Windows = "windows";
 }

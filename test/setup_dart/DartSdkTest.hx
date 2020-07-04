@@ -27,24 +27,24 @@ class DartSdkTest extends Test {
 		var dartSdk = new DartSdk();
 		var urlPattern = "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip";
 
-		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.macos), dartSdk.releaseUrl);
-		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.windows), dartSdk.releaseUrl);
-		else Assert.equals(urlPattern.replace("{platform}", Platform.linux), dartSdk.releaseUrl);
+		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.MacOS), dartSdk.releaseUrl);
+		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.Windows), dartSdk.releaseUrl);
+		else Assert.equals(urlPattern.replace("{platform}", Platform.Linux), dartSdk.releaseUrl);
 
 		// It should point to a valid Dart SDK release.
-		dartSdk = new DartSdk({architecture: Architecture.ia32, releaseChannel: ReleaseChannel.dev, version: "12.34.56-dev.7.8"});
+		dartSdk = new DartSdk({architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"});
 		urlPattern = "https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip";
 
-		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.macos), dartSdk.releaseUrl);
-		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.windows), dartSdk.releaseUrl);
-		else Assert.equals(urlPattern.replace("{platform}", Platform.linux), dartSdk.releaseUrl);
+		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.MacOS), dartSdk.releaseUrl);
+		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.Windows), dartSdk.releaseUrl);
+		else Assert.equals(urlPattern.replace("{platform}", Platform.Linux), dartSdk.releaseUrl);
 	}
 
 	/** Tests the `download()` method. **/
 	@:timeout(180000)
 	function testDownload(async: Async) {
 		// It should properly download and extract the Dart SDK.
-		new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.7.0"}).download()
+		new DartSdk({releaseChannel: Stable, version: "2.7.0"}).download()
 			.then(sdkDir -> {
 				final executable = Sys.systemName() == "Windows" ? "dart.exe" : "dart";
 				Assert.isTrue(FileSystem.exists('$sdkDir/bin/$executable'));

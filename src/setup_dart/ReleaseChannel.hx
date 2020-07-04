@@ -4,11 +4,11 @@ package setup_dart;
 enum abstract ReleaseChannel(String) from String to String {
 
 	/** Specifies a development release of the Dart SDK. **/
-	var beta;
+	var Beta = "beta";
 
 	/** Specifies a development release of the Dart SDK. **/
-	var dev;
+	var Development = "dev";
 
 	/** Specifies a stable release of the Dart SDK. **/
-	var stable;
+	var Stable = "stable";
 }

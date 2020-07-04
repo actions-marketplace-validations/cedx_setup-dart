@@ -12,7 +12,7 @@ class Program {
 		if (architecture.length == 0) architecture = Node.process.arch;
 
 		var releaseChannel = Core.getInput("release-channel");
-		if (releaseChannel.length == 0) releaseChannel = ReleaseChannel.stable;
+		if (releaseChannel.length == 0) releaseChannel = ReleaseChannel.Stable;
 
 		var version = Core.getInput("version");
 		if (version.length == 0) version = "latest";
