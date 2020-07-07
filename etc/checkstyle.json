@@ -1,5 +1,13 @@
 {
 	"defaultSeverity": "ERROR",
+	"exclude": {
+		"path": "RELATIVE_TO_SOURCE",
+		"MemberName": [
+			"setup_dart/Architecture",
+			"setup_dart/Platform",
+			"setup_dart/ReleaseChannel"
+		]
+	},
 	"checks": [
 		{"type": "BlockBreakingConditional"},
 		{"type": "ConditionalCompilation"},

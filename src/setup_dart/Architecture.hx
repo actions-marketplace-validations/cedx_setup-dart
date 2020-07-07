@@ -4,7 +4,7 @@ package setup_dart;
 enum abstract Architecture(String) from String to String {
 
 	/** Specifies a 32-bit ARM architecture. **/
-	var ARM ="arm";
+	var ARM = "arm";
 
 	/** Specifies a 64-bit ARM architecture. **/
 	var ARM64 = "arm64";
