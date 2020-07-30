@@ -31,7 +31,7 @@ jobs:
       - name: Run tests
         run: |
           haxe test.hxml
-          npm run test
+          npm test
       - name: Collect code coverage
         env:
           COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -3,8 +3,9 @@
 --define js-es=6
 --js var/tests.js
 --library hxnodejs
---library mcover
+--define coverage-lcov-reporter=var/lcov.info
+--library instrument
 --library thenshim
 --library utest
---macro mcover.MCover.coverage([''], ['src'])
+--macro instrument.Instrumentation.coverage(['setup_dart'], ['src'])
 --main TestAll
