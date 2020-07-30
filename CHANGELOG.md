@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [2.2.0](https://git.belin.io/cedx/setup-dart/compare/v2.1.0...v2.2.0)
+- The `DartSdk.install()` method now returns the path to the install directory.
+- Updated the package dependencies.
+
 ## Version [2.1.0](https://git.belin.io/cedx/setup-dart/compare/v2.0.0...v2.1.0)
 - Fixed the [npm](https://www.npmjs.com) packaging.
 - Updated the documentation.
