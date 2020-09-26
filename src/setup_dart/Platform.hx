@@ -1,7 +1,7 @@
 package setup_dart;
 
 /** Defines the platform of the Dart SDK. **/
-enum abstract Platform(String) from String to String {
+enum abstract Platform(String) to String {
 
 	/** Specifies a Linux platform. **/
 	var Linux = "linux";
