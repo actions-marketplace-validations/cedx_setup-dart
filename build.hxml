@@ -5,7 +5,6 @@
 --library hxnodejs:12.1.0
 
 --each
---dce full
 --js bin/setup_dart.js
 --main setup_dart.Program
 
