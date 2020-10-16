@@ -13,7 +13,7 @@ using thenshim.PromiseTools;
 /** Tests the features of the `DartSdk` class. **/
 class DartSdkTest extends Test {
 
-	/** Method invoked before each test. **/
+	/** This method is executed before each test. **/
 	function setup() {
 		if (Sys.getEnv("RUNNER_TEMP") == null) Sys.putEnv("RUNNER_TEMP", "var/tests/temp");
 		if (Sys.getEnv("RUNNER_TOOL_CACHE") == null) Sys.putEnv("RUNNER_TOOL_CACHE", "var/tests/cache");
