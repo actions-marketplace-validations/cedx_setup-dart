@@ -8,5 +8,5 @@
 	"releasenote": "Updated the package dependencies.",
 	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
 	"url": "https://docs.belin.io/setup-dart",
-	"version": "2.2.0"
+	"version": "2.3.0"
 }
