@@ -15,7 +15,7 @@
 		"url": "https://belin.io"
 	},
 	"bin": {
-		"setup_dart": "./bin/setup_dart.js"
+		"setup_dart": "bin/setup_dart.js"
 	},
 	"dependencies": {
 		"@actions/core": "^1.2.6",
