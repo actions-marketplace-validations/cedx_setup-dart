@@ -26,7 +26,7 @@
 		"@vercel/ncc": "^0.24.1"
 	},
 	"engines": {
-		"node": ">=12.19.0"
+		"node": ">=14.15.0"
 	},
 	"exports": {
 		"import": "./lib/index.mjs",
