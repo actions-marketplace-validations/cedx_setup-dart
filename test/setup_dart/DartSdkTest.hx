@@ -3,68 +3,68 @@ package setup_dart;
 import js.node.Path;
 import sys.FileSystem;
 import sys.io.File;
-import utest.Assert;
-import utest.Async;
-import utest.Test;
 
 using StringTools;
 using thenshim.PromiseTools;
+using tink.CoreApi;
 
 /** Tests the features of the `DartSdk` class. **/
-class DartSdkTest extends Test {
+@:asserts class DartSdkTest {
 
-	/** This method is executed before each test. **/
-	function setup() {
+	/** Creates a new test. **/
+	public function new() {}
+
+	/** This method is executed once before running the first test in the current class. **/
+	@:setup public function setup(): Promise<Noise> {
 		if (Sys.getEnv("RUNNER_TEMP") == null) Sys.putEnv("RUNNER_TEMP", "var/tests/temp");
 		if (Sys.getEnv("RUNNER_TOOL_CACHE") == null) Sys.putEnv("RUNNER_TOOL_CACHE", "var/tests/cache");
+		return Noise;
 	}
 
 	/** Tests the `releaseUrl` property. **/
-	function testReleaseUrl() {
-		final sysName = Sys.systemName();
-
-		// It should point, by default, to the latest stable release.
-		var dartSdk = new DartSdk();
-		var urlPattern = "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip";
-
-		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.MacOS), dartSdk.releaseUrl);
-		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.Windows), dartSdk.releaseUrl);
-		else Assert.equals(urlPattern.replace("{platform}", Platform.Linux), dartSdk.releaseUrl);
-
-		// It should point to a valid Dart SDK release.
-		dartSdk = new DartSdk({architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"});
-		urlPattern = "https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip";
-
-		if (sysName == "Mac") Assert.equals(urlPattern.replace("{platform}", Platform.MacOS), dartSdk.releaseUrl);
-		else if (sysName == "Windows") Assert.equals(urlPattern.replace("{platform}", Platform.Windows), dartSdk.releaseUrl);
-		else Assert.equals(urlPattern.replace("{platform}", Platform.Linux), dartSdk.releaseUrl);
+	@:variant(
+		new setup_dart.DartSdk(),
+		"https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip"
+	)
+	@:variant(
+		new setup_dart.DartSdk({architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"}),
+		"https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip"
+	)
+	public function testReleaseUrl(input: DartSdk, output: String) return switch Sys.systemName() {
+		case "Mac": assert(input.releaseUrl == output.replace("{platform}", Platform.MacOS));
+		case "Windows": assert(input.releaseUrl == output.replace("{platform}", Platform.Windows));
+		default: assert(input.releaseUrl == output.replace("{platform}", Platform.Linux));
 	}
 
 	/** Tests the `download()` method. **/
 	@:timeout(180000)
-	function testDownload(async: Async) {
+	public function testDownload() {
 		// It should properly download and extract the Dart SDK.
 		new DartSdk({releaseChannel: Stable, version: "2.7.0"}).download()
 			.then(sdkDir -> {
 				final executable = Sys.systemName() == "Windows" ? "dart.exe" : "dart";
-				Assert.isTrue(FileSystem.exists('$sdkDir/bin/$executable'));
-				Assert.equals("2.7.0", File.getContent('$sdkDir/version').rtrim());
+				asserts.assert(FileSystem.exists('$sdkDir/bin/$executable'));
+				asserts.assert(File.getContent('$sdkDir/version').rtrim() == "2.7.0");
 			})
-			.catchError(e -> Assert.fail(Std.string(e)))
-			.finally(() -> async.done());
+			.catchError(e -> asserts.fail(Std.string(e)))
+			.finally(() -> asserts.done());
+
+		return asserts;
 	}
 
 	/** Tests the `install()` method. **/
 	@:timeout(180000)
-	function testInstall(async: Async) {
+	public function testInstall() {
 		// It should add the Dart SDK binaries to the PATH environment variable.
 		final dartSdk = new DartSdk();
 		dartSdk.install()
 			.then(_ -> {
 				final path = Path.normalize('/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin');
-				Assert.isTrue(Sys.getEnv("PATH").contains(path));
+				asserts.assert(Sys.getEnv("PATH").contains(path));
 			})
-			.catchError(e -> Assert.fail(Std.string(e)))
-			.finally(() -> async.done());
+			.catchError(e -> asserts.fail(Std.string(e)))
+			.finally(() -> asserts.done());
+
+		return asserts;
 	}
 }
