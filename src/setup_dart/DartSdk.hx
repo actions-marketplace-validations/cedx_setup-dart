@@ -1,19 +1,15 @@
 package setup_dart;
 
-import js.Syntax;
-import js.lib.Object;
-import js.lib.Promise;
-import js.node.Fs;
-import js.node.Path;
-import js.node.Util;
+import haxe.io.Path;
 import js.npm.actions.Core;
 import js.npm.actions.ToolCache;
+import sys.io.File;
 
 using StringTools;
+using setup_dart.PathTools;
+using tink.CoreApi;
 
 /** Represents a release of the Dark SDK. **/
-@:expose
-@:require(nodejs)
 class DartSdk {
 
 	/** The pattern used to format the URL of the ZIP archive corresponding to the Dart SDK. **/
@@ -54,9 +50,9 @@ class DartSdk {
 	  Returns the path to the extracted directory.
 	**/
 	public function download(): Promise<String>
-		return ToolCache.downloadTool(releaseUrl)
-			.then(file -> ToolCache.extractZip(file))
-			.then(path -> Path.join(path, "dart-sdk"));
+		return Promise.ofJsPromise(ToolCache.downloadTool(releaseUrl))
+			.next(file -> ToolCache.extractZip(file))
+			.next(path -> Path.join([path, "dart-sdk"]).normalizeSeparator());
 
 	/**
 		Installs this Dart SDK, after downloading it if required.
@@ -64,26 +60,17 @@ class DartSdk {
 	**/
 	public function install(): Promise<String> {
 		final toolName = "dart-sdk";
+
 		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
+		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : download().next(path -> {
+			version = File.getContent(Path.join([path, "version"])).rtrim();
+			ToolCache.cacheDir(path, toolName, version, architecture);
+		});
 
-		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : {
-			final readFile = Util.promisify(Fs.readFile);
-			download()
-				.then(output -> readFile(Path.join(sdkDir = output, "version"), "utf8"))
-				.then(content -> version = (content: String).rtrim())
-				.then(_ -> ToolCache.cacheDir(sdkDir, toolName, version, architecture));
-		}
-
-		return promise.then(sdkDir -> {
-			Core.addPath(Path.join(sdkDir, "bin"));
+		return promise.next(sdkDir -> {
+			Core.addPath(Path.join([sdkDir, "bin"]).normalizeSeparator());
 			sdkDir;
 		});
-	}
-
-	/** Initializes the class. **/
-	static function __init__() {
-		final dartSdkProto = Syntax.field(DartSdk, "prototype");
-		Object.defineProperty(dartSdkProto, "releaseUrl", {get: dartSdkProto.get_releaseUrl});
 	}
 }
 
