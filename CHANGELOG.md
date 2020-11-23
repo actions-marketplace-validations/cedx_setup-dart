@@ -1,5 +1,11 @@
 # Changelog
 
+## Version [2.4.0](https://git.belin.io/cedx/setup-dart/compare/v2.3.0...v2.4.0)
+- Raised the [Node.js](https://nodejs.org) version used by the action runner.
+- Replaced the [`thenshim`](https://lib.haxe.org/p/thenshim) promises by the [`tink_core`](https://lib.haxe.org/p/tink_core) ones.
+- Replaced the [`utest`](https://lib.haxe.org/p/utest) library by [`tink_unittest`](https://lib.haxe.org/p/tink_unittest) one for unit testing.
+- Updated the package dependencies.
+
 ## Version [2.3.0](https://git.belin.io/cedx/setup-dart/compare/v2.2.0...v2.3.0)
 - Updated the package dependencies.
 
