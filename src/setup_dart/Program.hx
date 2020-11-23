@@ -4,7 +4,7 @@ import js.Node;
 import js.npm.actions.Core;
 
 /** Sets up the Dart SDK. **/
-class Program {
+@:noDoc class Program {
 
 	/** Application entry point. **/
 	static function main() {

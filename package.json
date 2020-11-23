@@ -3,11 +3,9 @@
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"homepage": "https://docs.belin.io/setup-dart",
 	"license": "MIT",
-	"main": "./lib/index.js",
 	"name": "@cedx/setup-dart",
 	"private": true,
 	"type": "commonjs",
-	"types": "./lib/index.d.ts",
 	"version": "2.4.1",
 	"author": {
 		"email": "cedric@belin.io",
@@ -28,13 +26,6 @@
 	"engines": {
 		"node": ">=12.19.0"
 	},
-	"exports": {
-		"import": "./lib/index.mjs",
-		"require": "./lib/index.js"
-	},
-	"files": [
-		"lib/"
-	],
 	"funding": {
 		"type": "patreon",
 		"url": "https://www.patreon.com/cedx"
