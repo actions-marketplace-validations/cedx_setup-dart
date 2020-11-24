@@ -21,19 +21,16 @@ using tink.CoreApi;
 	}
 
 	/** Tests the `releaseUrl` property. **/
+	@:variant({}, "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip")
 	@:variant(
-		new setup_dart.DartSdk(),
-		"https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip"
-	)
-	@:variant(
-		new setup_dart.DartSdk({architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"}),
+		{architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"},
 		"https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip"
 	)
-	public function testReleaseUrl(input: DartSdk, output: String) return switch Sys.systemName() {
-		case "Mac": assert(input.releaseUrl == output.replace("{platform}", Platform.MacOS));
-		case "Windows": assert(input.releaseUrl == output.replace("{platform}", Platform.Windows));
-		default: assert(input.releaseUrl == output.replace("{platform}", Platform.Linux));
-	}
+	public function testReleaseUrl(input: DartSdk.DartSdkOptions, output: String) return switch Sys.systemName() {
+		case "Mac": assert(new DartSdk(input).releaseUrl == output.replace("{platform}", Platform.MacOS));
+		case "Windows": assert(new DartSdk(input).releaseUrl == output.replace("{platform}", Platform.Windows));
+		default: assert(new DartSdk(input).releaseUrl == output.replace("{platform}", Platform.Linux));
+	};
 
 	/** Tests the `download()` method. **/
 	@:timeout(180000)
