@@ -5,7 +5,6 @@ import sys.io.File;
 
 using StringTools;
 using setup_dart.PathTools;
-using tink.CoreApi;
 
 /** Tests the features of the `DartSdk` class. **/
 @:asserts class DartSdkTest {
