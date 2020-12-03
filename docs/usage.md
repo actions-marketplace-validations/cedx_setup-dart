@@ -33,7 +33,7 @@ Allowed values are:
 ### Basic
 Setup a specific version of the Dart SDK:
 
-``` yaml
+```yaml
 steps:
 	- uses: cedx/setup-dart@v2
 	  with:
@@ -45,13 +45,12 @@ steps:
 	- run: pub run test
 ```
 
-!!! tip
-	A sample workflow can be found in the [`build.yaml`](https://git.belin.io/cedx/setup-dart/src/branch/main/example/build.yaml) file.
+?> A sample workflow can be found in this [build.yaml](https://git.belin.io/cedx/setup-dart/src/branch/main/example/build.yaml) file.
 
 ### Matrix
 Setup multiple versions of the Dart SDK on multiple operating systems:
 
-``` yaml
+```yaml
 jobs:
 	test:
 		name: Dart SDK ${{matrix.sdk}} on ${{matrix.os}}

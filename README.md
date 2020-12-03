@@ -1,7 +1,7 @@
 # Setup Dart Action
 ![Runtime](https://badgen.net/badge/node/%3E%3D12.19.0/green) ![Release](https://badgen.net/badge/action/v2.4.1/blue) ![License](https://badgen.net/badge/license/MIT/blue) ![Coverage](https://badgen.net/coveralls/c/github/cedx/setup-dart) ![Build](https://badgen.net/github/checks/cedx/setup-dart/main)
 
-Set up your [GitHub Actions](https://github.com/features/actions) workflow with a specific version of the [Dart SDK](https://dart.dev/tools/sdk).
+> Set up your [GitHub Actions](https://github.com/features/actions) workflow with a specific version of the [Dart SDK](https://dart.dev/tools/sdk).
 
 ## Documentation
 - [User guide](https://docs.belin.io/setup-dart)

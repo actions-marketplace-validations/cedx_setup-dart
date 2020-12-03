@@ -12,7 +12,7 @@ using setup_dart.PathTools;
 	/** Creates a new test. **/
 	public function new() {}
 
-	/** This method is executed once before running the first test in the current class. **/
+	/** This method is executed once before running the first test. **/
 	@:setup public function setup() {
 		if (Sys.getEnv("RUNNER_TEMP") == null) Sys.putEnv("RUNNER_TEMP", FileSystem.absolutePath("var/tests/temp"));
 		if (Sys.getEnv("RUNNER_TOOL_CACHE") == null) Sys.putEnv("RUNNER_TOOL_CACHE", FileSystem.absolutePath("var/tests/cache"));
