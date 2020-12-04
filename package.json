@@ -6,7 +6,7 @@
 	"name": "@cedx/setup-dart",
 	"private": true,
 	"type": "commonjs",
-	"version": "2.4.1",
+	"version": "2.5.0",
 	"author": {
 		"email": "cedric@belin.io",
 		"name": "Cédric Belin",
