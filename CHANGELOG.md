@@ -1,5 +1,8 @@
 # Changelog
 
+## Version [2.5.0](https://git.belin.io/cedx/setup-dart/compare/v2.4.1...v2.5.0)
+- Added support for the bleeding edge release channel.
+
 ## Version [2.4.1](https://git.belin.io/cedx/setup-dart/compare/v2.4.0...v2.4.1)
 - Fixed the [Node.js](https://nodejs.org) version used by the action runner.
 
