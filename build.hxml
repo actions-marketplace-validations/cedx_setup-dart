@@ -5,4 +5,5 @@
 --js bin/setup_dart.js
 --library hxnodejs:12.1.0
 --library tink_core:1.27.1
+--library tink_url:0.4.2
 --main setup_dart.Program
