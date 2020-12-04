@@ -1,7 +1,7 @@
 name: build
 on:
-  pull_request:
-  push:
+  - pull_request
+  - push
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,12 +13,17 @@ jobs:
           release-channel: stable
           version: latest
       - name: Check environment
-        run: |
-          dart --version
-          pub --version
+        run: dart --version
       - name: Fetch sources
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: pub get
+        run: dart pub get
       - name: Run tests
-        run: pub run build_runner test
+        run: dart test --coverage=var
+      - name: Collect code coverage
+        env:
+          COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        if: success()
+        run: |
+          dart pub run coverage:format_coverage --in=var/test --lcov --out=var/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
+          dart pub run coveralls var/lcov.info

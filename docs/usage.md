@@ -42,8 +42,8 @@ steps:
 			release-channel: dev
 			version: 2.9.0-3.0.dev
 	- uses: actions/checkout@v2
-	- run: pub get
-	- run: pub run test
+	- run: dart pub get
+	- run: dart test
 ```
 
 ?> A sample workflow can be found in this [build.yaml](https://git.belin.io/cedx/setup-dart/src/branch/main/example/build.yaml) file.
@@ -65,6 +65,6 @@ jobs:
 			  with:
 					release-channel: ${{matrix.sdk}}
 			- uses: actions/checkout@v2
-			- run: pub get
-			- run: pub run test
+			- run: dart pub get
+			- run: dart test
 ```
