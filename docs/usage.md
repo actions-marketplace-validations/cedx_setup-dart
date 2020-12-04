@@ -59,7 +59,7 @@ jobs:
 		strategy:
 			matrix:
 				os: [macos-latest, ubuntu-latest, windows-latest]
-				sdk: [beta, dev, stable]
+				sdk: [stable, beta, dev, edge]
 		steps:
 			- uses: cedx/setup-dart@v2
 			  with:
