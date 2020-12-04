@@ -17,9 +17,10 @@ Allowed values are:
 The release channel of the Dart SDK (optional, defaults to `"stable"`).  
 Allowed values are:
 
-- `stable`: the stable release of the SDK. Stable channel builds are tested and approved for production use.
-- `beta`: the beta release of the SDK. Beta channel builds are preview builds for the stable channel.
-- `dev`: the development release of the SDK. Dev channel builds can provide early access to new features but might contain bugs.
+- `stable`: stable releases, updated roughly every three months. Stable channel builds are suitable for production use.
+- `beta`: preview releases, usually updated every month. Beta channel builds are preview builds for the stable channel.
+- `dev`: prereleases, usually updated twice a week. Dev channel builds are the most current with latest changes, may be broken, are unsupported, and may contain unvetted breaking changes.
+- `edge`: bleeding edge releases, usually updated every time a new commit is made on the SDK repository. Use with caution!
 
 ### **version**: string
 The version number of the Dart SDK (optional, defaults to `"latest"`).  
@@ -27,7 +28,7 @@ Allowed values are:
 
 - `latest`: the latest release of the SDK.
 - a specific version number: `2.7.2`, `2.8.0-20.11.beta`, `2.9.0-3.0.dev`, etc.
-		
+
 ## Setup
 
 ### Basic
