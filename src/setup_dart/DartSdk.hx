@@ -60,9 +60,8 @@ class DartSdk {
 	**/
 	public function install(): Promise<String> {
 		final toolName = "dart-sdk";
-
-		var sdkDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
-		final promise = sdkDir.length > 0 ? Promise.resolve(sdkDir) : download().next(path -> {
+		final cachedDir = version != "latest" ? ToolCache.find(toolName, version, architecture) : "";
+		final promise = cachedDir.length > 0 ? Promise.resolve(cachedDir) : download().next(path -> {
 			version = File.getContent(Path.join([path, "version"])).rtrim();
 			ToolCache.cacheDir(path, toolName, version, architecture);
 		});
