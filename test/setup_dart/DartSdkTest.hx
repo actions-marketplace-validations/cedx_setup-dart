@@ -20,10 +20,17 @@ using setup_dart.PathTools;
 	}
 
 	/** Tests the `releaseUrl` property. **/
-	@:variant({}, "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip")
 	@:variant(
-		{architecture: IA32, releaseChannel: Development, version: "12.34.56-dev.7.8"},
-		"https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-ia32-release.zip"
+		{},
+		"https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-{platform}-x64-release.zip"
+	)
+	@:variant(
+		{architecture: IA32, releaseChannel: BleedingEdge},
+		"https://storage.googleapis.com/dart-archive/channels/be/raw/latest/sdk/dartsdk-{platform}-ia32-release.zip"
+	)
+	@:variant(
+		{architecture: ARM64, releaseChannel: Development, version: "12.34.56-dev.7.8"},
+		"https://storage.googleapis.com/dart-archive/channels/dev/release/12.34.56-dev.7.8/sdk/dartsdk-{platform}-arm64-release.zip"
 	)
 	public function testReleaseUrl(input: DartSdk.DartSdkOptions, output: String) return switch Sys.systemName() {
 		case "Mac": assert(new DartSdk(input).releaseUrl == output.replace("{platform}", Platform.MacOS));

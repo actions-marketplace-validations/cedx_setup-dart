@@ -14,7 +14,7 @@ class DartSdk {
 
 	/** The pattern used to format the URL of the ZIP archive corresponding to the Dart SDK. **/
 	static final downloadUrlPattern =
-		"https://storage.googleapis.com/dart-archive/channels/{releaseChannel}/release/{version}/sdk/dartsdk-{platform}-{architecture}-release.zip";
+		"https://storage.googleapis.com/dart-archive/channels/{releaseChannel}/{version}/sdk/dartsdk-{platform}-{architecture}-release.zip";
 
 	/** The architecture of this Dart SDK. **/
 	public var architecture: Architecture = X64;
@@ -41,7 +41,7 @@ class DartSdk {
 		return downloadUrlPattern
 			.replace("{architecture}", architecture)
 			.replace("{platform}", if (sysName == "Windows") Platform.Windows else sysName == "Mac" ? Platform.MacOS : Platform.Linux)
-			.replace("{releaseChannel}", releaseChannel)
+			.replace("{releaseChannel}", releaseChannel == BleedingEdge ? "be/raw" : '$releaseChannel/release')
 			.replace("{version}", version);
 	}
 
