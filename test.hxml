@@ -10,3 +10,4 @@
 --macro allowPackage('sys')
 --macro instrument.Instrumentation.coverage(['setup_dart'], ['src'])
 --main TestAll
+--cmd node var/tests.js

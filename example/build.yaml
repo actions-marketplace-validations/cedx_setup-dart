@@ -6,6 +6,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Fetch sources
+        uses: actions/checkout@v2
       - name: Set up Dart
         uses: cedx/setup-dart@v2
         with:
@@ -14,8 +16,6 @@ jobs:
           version: latest
       - name: Check environment
         run: dart --version
-      - name: Fetch sources
-        uses: actions/checkout@v2
       - name: Install dependencies
         run: dart pub get
       - name: Run tests
