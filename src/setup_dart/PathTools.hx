@@ -2,7 +2,7 @@ package setup_dart;
 
 using StringTools;
 
-/** Provides static methods for managing file paths. **/
+/** Provides helper methods for managing file paths. **/
 @:allow(setup_dart)
 @:noDoc
 class PathTools {
