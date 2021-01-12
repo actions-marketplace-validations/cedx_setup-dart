@@ -9,7 +9,7 @@ haxelib run dox `
 	--define source-path "https://git.belin.io/cedx/setup-dart/src/branch/main/src" `
 	--define themeColor 0x0175c2 `
 	--define version $version `
-	--define website "https://belin.io" `
+	--define website "https://docs.belin.io/setup-dart" `
 	--input-path var `
 	--output-path docs/api `
 	--title "Setup Dart Action" `
