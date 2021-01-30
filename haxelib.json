@@ -1,7 +1,7 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"externs": "0.3.0", "hxnodejs": "12.1.0", "tink_core": "1.27.1"},
+	"dependencies": {"externs": "0.4.0", "hxnodejs": "12.1.0", "tink_core": "1.27.1"},
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"license": "MIT",
 	"name": "setup_dart",
