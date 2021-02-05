@@ -46,7 +46,7 @@ steps:
 	- run: dart test
 ```
 
-?> A sample workflow can be found in this [build.yaml](https://git.belin.io/cedx/setup-dart/src/branch/main/example/build.yaml) file.
+?> A sample workflow can be found in this [build.yaml](https://github.com/cedx/setup-dart/blob/main/example/build.yaml) file.
 
 ### Matrix
 Setup multiple versions of the Dart SDK on multiple operating systems:

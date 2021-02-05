@@ -6,8 +6,8 @@
 - [GitHub marketplace](https://github.com/marketplace/actions/setup-dart-action)
 
 ## Development
-- [API reference](https://api.belin.io/setup-dart)
-- [Submit an issue](https://git.belin.io/cedx/setup-dart/issues)
+- [API reference](https://cedx.github.io/setup-dart/api)
+- [Submit an issue](https://github.com/cedx/setup-dart/issues)
 
 ## Testing
 - [Continuous integration](https://github.com/cedx/setup-dart/actions)

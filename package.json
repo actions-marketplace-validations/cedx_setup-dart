@@ -1,10 +1,11 @@
 {
-	"bugs": "https://git.belin.io/cedx/setup-dart/issues",
+	"bugs": "https://github.com/cedx/setup-dart/issues",
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
-	"homepage": "https://docs.belin.io/setup-dart",
+	"homepage": "https://cedx.github.io/setup-dart",
 	"license": "MIT",
 	"name": "@cedx/setup-dart",
 	"private": true,
+	"repository": "cedx/setup-dart",
 	"type": "commonjs",
 	"version": "2.5.0",
 	"author": {
@@ -39,10 +40,6 @@
 		"test",
 		"workflow"
 	],
-	"repository": {
-		"type": "git",
-		"url": "https://git.belin.io/cedx/setup-dart.git"
-	},
 	"scripts": {
 		"coverage": "coveralls var/lcov.info",
 		"dist": "ncc build bin/setup_dart.js --minify --out=var",

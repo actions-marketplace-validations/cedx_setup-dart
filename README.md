@@ -4,13 +4,13 @@
 > Set up your [GitHub Actions](https://github.com/features/actions) workflow with a specific version of the [Dart SDK](https://dart.dev/tools/sdk).
 
 ## Documentation
-- [User guide](https://docs.belin.io/setup-dart)
-- [API reference](https://api.belin.io/setup-dart)
+- [User guide](https://cedx.github.io/setup-dart)
+- [API reference](https://cedx.github.io/setup-dart/api)
 
 ## Development
-- [Git repository](https://git.belin.io/cedx/setup-dart)
+- [Git repository](https://github.com/cedx/setup-dart)
 - [GitHub marketplace](https://github.com/marketplace/actions/setup-dart-action)
-- [Submit an issue](https://git.belin.io/cedx/setup-dart/issues)
+- [Submit an issue](https://github.com/cedx/setup-dart/issues)
 
 ## License
-[Setup Dart Action](https://docs.belin.io/setup-dart) is distributed under the MIT License.
+[Setup Dart Action](https://cedx.github.io/setup-dart) is distributed under the MIT License.
