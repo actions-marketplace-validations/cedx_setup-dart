@@ -1,12 +1,24 @@
 {
 	"classPath": "src/",
 	"contributors": ["cedx"],
-	"dependencies": {"externs": "0.5.0", "hxnodejs": "12.1.0", "tink_core": "1.27.1"},
+	"dependencies": {
+		"externs": "",
+		"hxnodejs": "",
+		"tink_core": ""
+	},
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"license": "MIT",
 	"name": "setup_dart",
 	"releasenote": "Fixed the Node.js version used by the action runner.",
-	"tags": ["action", "ci", "dart", "github", "sdk", "test", "workflow"],
+	"tags": [
+		"action",
+		"ci",
+		"dart",
+		"github",
+		"sdk",
+		"test",
+		"workflow"
+	],
 	"url": "https://cedx.github.io/setup-dart",
 	"version": "2.5.0"
 }

@@ -2,9 +2,11 @@
 Set-StrictMode -Version Latest
 Set-Location (Split-Path $PSScriptRoot)
 
+if (Test-Path docs/api) { Remove-Item docs/api -Force -Recurse }
+
 $version = (Get-Content haxelib.json | ConvertFrom-Json).version
 haxe --define doc-gen --xml var/api.xml build.hxml
-haxelib run dox `
+lix run dox `
 	--define description "Set up your GitHub Actions workflow with a specific version of the Dart SDK." `
 	--define source-path "https://github.com/cedx/setup-dart/blob/main/src" `
 	--define themeColor 0x0175c2 `

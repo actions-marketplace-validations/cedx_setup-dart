@@ -14,8 +14,6 @@ jobs:
           architecture: x64
           release-channel: stable
           version: latest
-      - name: Check environment
-        run: dart --version
       - name: Install dependencies
         run: dart pub get
       - name: Run tests

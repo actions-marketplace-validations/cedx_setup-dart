@@ -1,0 +1,3 @@
+# @install: lix --silent download "haxelib:/externs#0.5.2" into externs/0.5.2/haxelib
+-cp ${HAXE_LIBCACHE}/externs/0.5.2/haxelib/src/
+-D externs=0.5.2

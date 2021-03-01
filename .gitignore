@@ -1,11 +1,6 @@
-/.*/
-!/.github/
-!/.vscode/
-
 /build/
 /node_modules/
 /var/
-/www/
 
 /*.code-workspace
 /*.iml
