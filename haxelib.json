@@ -19,6 +19,6 @@
 		"test",
 		"workflow"
 	],
-	"url": "https://cedx.github.io/setup-dart",
+	"url": "https://bitbucket.org/cedx/setup-dart",
 	"version": "2.5.0"
 }
