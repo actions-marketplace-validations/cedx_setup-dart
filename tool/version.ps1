@@ -15,4 +15,3 @@ function Update-File {
 $version = (Get-Content haxelib.json | ConvertFrom-Json).version
 Update-File package.json '"version": "\d+(\.\d+){2}"' """version"": ""$version"""
 Update-File README.md "action/v\d+(\.\d+){2}" "action/v$version"
-Update-File docs/README.md "action/v\d+(\.\d+){2}" "action/v$version"
