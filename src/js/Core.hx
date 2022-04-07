@@ -1,4 +1,4 @@
-package js.npm.actions.core;
+package js.actions;
 
 import haxe.extern.EitherType;
 import js.lib.Error;
@@ -9,6 +9,9 @@ extern class Core {
 
 	/** Prepends the given input `path` to the jobs `PATH`. **/
 	static function addPath(path: String): Void;
+
+	/** Logs the specified `message`. **/
+	static function info(message: String): Void;
 
 	/** Gets the value of an input. **/
 	static function getInput(name: String, ?options: InputOptions): String;
@@ -21,5 +24,8 @@ extern class Core {
 typedef InputOptions = {
 
 	/** Value indicating whether the input is required. **/
-	var required: Bool;
+	var ?required: Bool;
+
+	/** Value indicating whether leading/trailing whitespace will be trimmed for the input. **/
+	var ?trimWhitespace: Bool;
 }

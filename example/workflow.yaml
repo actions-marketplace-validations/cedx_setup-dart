@@ -1,13 +1,14 @@
-name: build
-on:
-  - pull_request
-  - push
+name: main
+on: [pull_request, push]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.platform}}
+    strategy:
+      matrix:
+        platform: [macos-latest, ubuntu-latest, windows-latest]
     steps:
       - name: Fetch sources
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up Dart
         uses: cedx/setup-dart@v2
         with:
@@ -17,11 +18,23 @@ jobs:
       - name: Install dependencies
         run: dart pub get
       - name: Run tests
-        run: dart test --coverage=var
-      - name: Collect code coverage
-        env:
-          COVERALLS_REPO_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        if: success()
         run: |
-          dart pub run coverage:format_coverage --in=var/test --lcov --out=var/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
-          dart pub run coveralls var/lcov.info
+          dart test --coverage=var
+          dart run coverage:format_coverage --in=var/test --lcov --out=lcov.info --packages=.dart_tool/package_config.json --report-on=lib
+      - name: Collect code coverage
+        if: success()
+        uses: coverallsapp/github-action@master
+        with:
+          flag-name: ${{matrix.platform}}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          path-to-lcov: lcov.info
+          parallel: true
+  coverage:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Upload code coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          parallel-finished: true

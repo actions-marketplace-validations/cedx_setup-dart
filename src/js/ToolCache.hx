@@ -1,4 +1,4 @@
-package js.npm.actions.tool_cache;
+package js.actions;
 
 import js.lib.Promise;
 
@@ -16,7 +16,7 @@ extern class ToolCache {
 		Downloads a tool from the specified URL and streams it into a file.
 		Returns the path of the downloaded file.
 	**/
-	static function downloadTool(url: String, ?destination: String): Promise<String>;
+	static function downloadTool(url: String, ?directory: String, ?authorization: String): Promise<String>;
 
 	/**
 		Extracts the specified ZIP archive into the given directory.
