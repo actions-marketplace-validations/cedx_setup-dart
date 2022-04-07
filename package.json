@@ -1,11 +1,11 @@
 {
-	"bugs": "https://bitbucket.org/cedx/setup-dart/issues",
+	"bugs": "https://github.com/cedx/setup-dart/issues",
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
-	"homepage": "https://bitbucket.org/cedx/setup-dart",
+	"homepage": "https://github.com/cedx/setup-dart",
 	"license": "MIT",
 	"name": "@cedx/setup-dart",
 	"private": true,
-	"repository": "cedx/setup-dart",
+	"repository": "github:cedx/setup-dart",
 	"type": "commonjs",
 	"version": "2.5.0",
 	"author": {
@@ -18,16 +18,12 @@
 	},
 	"dependencies": {
 		"@actions/core": "^1.6.0",
-		"@actions/tool-cache": "^1.7.1"
+		"@actions/tool-cache": "^1.7.2"
 	},
 	"devDependencies": {
-		"@vercel/ncc": "^0.31.1"
+		"@vercel/ncc": "^0.33.3"
 	},
 	"engines": {
-		"node": ">=12.0.0"
-	},
-	"scripts": {
-		"dist": "ncc build bin/setup_dart.js --minify --out=var",
-		"prepack": "pwsh tool/dist.ps1"
+		"node": ">=16.0.0"
 	}
 }
