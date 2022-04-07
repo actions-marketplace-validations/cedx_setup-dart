@@ -1,9 +1,3 @@
---class-path src
---dce full
---define analyzer-optimize
---define js-es=6
 --js bin/setup_dart.js
---library externs
---library hxnodejs
---library tink_core
 --main setup_dart.Program
+share/build.hxml
