@@ -2,7 +2,6 @@ package setup_dart;
 
 import sys.FileSystem;
 import sys.io.File;
-
 using StringTools;
 using setup_dart.PathTools;
 
