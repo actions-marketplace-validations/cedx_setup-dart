@@ -7,11 +7,11 @@ Set up your [GitHub Actions](https://github.com/features/actions) workflow with 
 > Consider using the official [Setup Dart action](https://github.com/dart-lang/setup-dart) as an alternative.
 
 ## Documentation
-- [User guide](https://bitbucket.org/cedx/setup-dart/wiki)
+- [User guide](https://github.com/cedx/setup-dart/wiki)
 
 ## Development
-- [Git repository](https://bitbucket.org/cedx/setup-dart)
-- [Submit an issue](https://bitbucket.org/cedx/setup-dart/issues)
+- [Git repository](https://github.com/cedx/setup-dart)
+- [Submit an issue](https://github.com/cedx/setup-dart/issues)
 
 ## License
-[Setup Dart Action](https://bitbucket.org/cedx/setup-dart) is distributed under the MIT License.
+[Setup Dart Action](https://github.com/cedx/setup-dart) is distributed under the MIT License.
