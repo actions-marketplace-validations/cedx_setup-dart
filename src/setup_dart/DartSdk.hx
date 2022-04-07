@@ -1,11 +1,10 @@
 package setup_dart;
 
-import haxe.io.Path;
-import js.npm.actions.core.Core;
-import js.npm.actions.tool_cache.ToolCache;
+import js.actions.Core;
+import js.actions.ToolCache;
 import sys.io.File;
-
 using StringTools;
+using haxe.io.Path;
 using setup_dart.PathTools;
 using tink.CoreApi;
 
