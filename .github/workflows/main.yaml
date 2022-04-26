@@ -6,18 +6,14 @@ jobs:
     steps:
       - name: Fetch sources
         uses: actions/checkout@v3
-      - name: Set up Lix
-        uses: lix-pm/setup-lix@master
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Install dependencies
-        run: |
-          lix download
-          npm install
+        run: npm install
       - name: Run tests
-        run: haxe test.hxml
+        run: npm test
       - name: Collect code coverage
         if: success()
         uses: coverallsapp/github-action@master
