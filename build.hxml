@@ -1,3 +1,0 @@
---js bin/setup_dart.js
---main setup_dart.Program
-share/build.hxml
