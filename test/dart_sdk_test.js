@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {existsSync} from "node:fs";
 import {readFile} from "node:fs/promises";
-import {normalize, join} from "node:path";
+import {normalize, join, resolve} from "node:path";
 import {format} from "node:util";
 import {Architecture, DartSdk, Platform, ReleaseChannel} from "../lib/index.js";
 
@@ -10,8 +10,8 @@ describe("DartSdk", function() {
   this.timeout(180000);
 
   before(() => {
-    if (!process.env.RUNNER_TEMP) process.env.RUNNER_TEMP = join(__dirname, "../var/tests/temp");
-    if (!process.env.RUNNER_TOOL_CACHE) process.env.RUNNER_TOOL_CACHE = join(__dirname, "../var/tests/cache");
+    if (!process.env.RUNNER_TEMP) process.env.RUNNER_TEMP = resolve("../var/tests/temp");
+    if (!process.env.RUNNER_TOOL_CACHE) process.env.RUNNER_TOOL_CACHE = resolve("../var/tests/cache");
   });
 
   describe(".releaseUrl", () => {
