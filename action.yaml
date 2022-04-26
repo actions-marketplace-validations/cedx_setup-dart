@@ -11,7 +11,7 @@ inputs:
     description: The processor architecture of the Dart SDK ("x64", "ia32", "arm64" or "arm").
     required: false
   release-channel:
-    description: The release channel of the Dart SDK ("stable", "beta", "dev" or "edge").
+    description: The release channel of the Dart SDK ("stable", "beta", "dev" or "main").
     default: stable
     required: false
   version:
