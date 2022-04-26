@@ -1,16 +1,17 @@
 # Setup Dart Action
-![Release](https://flat.badgen.net/badge/action/v2.5.0/blue) ![License](https://flat.badgen.net/badge/license/MIT/blue) ![Coverage](https://flat.badgen.net/coveralls/c/bitbucket/cedx/setup-dart) ![Build](https://flat.badgen.net/github/checks/cedx/setup-dart/main)
+![Runtime](https://badgen.net/badge/node/%3E%3D16.0.0/green) ![Release](https://badgen.net/badge/action/v2.0.0/blue) ![License](https://badgen.net/badge/license/MIT/blue) ![Coverage](https://badgen.net/coveralls/c/github/cedx/setup-dart)
 
 Set up your [GitHub Actions](https://github.com/features/actions) workflow with a specific version of the [Dart SDK](https://dart.dev/tools/sdk).
 
-> WARNING: this package is **abandoned** and no longer maintained.  
-> Consider using the official [Setup Dart action](https://github.com/dart-lang/setup-dart) as an alternative.
+> Consider using the official [Setup-Dart](https://github.com/marketplace/actions/setup-dart-sdk) action as an alternative.
 
 ## Documentation
 - [User guide](https://github.com/cedx/setup-dart/wiki)
+- [API reference](https://cedx.github.io/setup-dart)
 
 ## Development
 - [Git repository](https://github.com/cedx/setup-dart)
+- [GitHub marketplace](https://github.com/marketplace/actions/setup-dart)
 - [Submit an issue](https://github.com/cedx/setup-dart/issues)
 
 ## License
