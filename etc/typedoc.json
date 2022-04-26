@@ -1,0 +1,11 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPoints": ["../lib/index.js"],
+	"excludePrivate": true,
+	"gitRevision": "main",
+	"hideGenerator": true,
+	"name": "Setup Dart Action",
+	"out": "../docs",
+	"readme": "none",
+	"tsconfig": "../lib/jsconfig.json"
+}
