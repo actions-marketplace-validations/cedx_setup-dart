@@ -20,7 +20,7 @@ export default gulp.series(
 
 /** Builds the project. */
 export async function build() {
-	await exec("npx", ["ncc", "build", "lib/index.js", "--minify", "--out=var", "--target=es2022"]);
+	await exec("npx", ["ncc", "build", "lib/main.js", "--minify", "--out=var", "--target=es2022"]);
 	await writeFile("bin/setup_hashlink.js", `#!/usr/bin/env node${EOL}` + await readFile("var/index.js", "utf8"));
 	return exec("npx", ["tsc", "--project", "lib/jsconfig.json"]);
 }
