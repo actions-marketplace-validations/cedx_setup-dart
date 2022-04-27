@@ -164,7 +164,7 @@
 		"eol-last": "error",
 		"func-call-spacing": "error",
 		"function-call-argument-newline": ["error", "consistent"],
-		"function-paren-newline": ["error", "consistent"],
+		"function-paren-newline": "off",
 		"generator-star-spacing": "error",
 		"implicit-arrow-linebreak": "error",
 		"indent": ["error", "tab"],

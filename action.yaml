@@ -21,4 +21,4 @@ inputs:
 
 runs:
   using: node16
-  main: bin/setup_dart.js
+  main: bin/setup_dart.mjs
