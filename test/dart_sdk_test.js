@@ -5,7 +5,9 @@ import {normalize, join, resolve} from "node:path";
 import {format} from "node:util";
 import {Architecture, DartSdk, Platform, ReleaseChannel} from "../lib/index.js";
 
-/** Tests the features of the {@link DartSdk} class. */
+/**
+ * Tests the features of the {@link DartSdk} class.
+ */
 describe("DartSdk", function() {
 	this.timeout(180000);
 
