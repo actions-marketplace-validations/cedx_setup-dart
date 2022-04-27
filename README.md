@@ -3,8 +3,6 @@
 
 Set up your [GitHub Actions](https://github.com/features/actions) workflow with a specific version of the [Dart SDK](https://dart.dev/tools/sdk).
 
-> Consider using the official [Setup-Dart](https://github.com/marketplace/actions/setup-dart-sdk) action as an alternative.
-
 ## Documentation
 - [User guide](https://github.com/cedx/setup-dart/wiki)
 - [API reference](https://cedx.github.io/setup-dart)

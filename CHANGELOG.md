@@ -1,5 +1,9 @@
 # Changelog
 
+## Version [3.0.0](https://github.com/cedx/setup-dart/compare/v2.5.0...v3.0.0)
+- Ported the source code to [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+- Raised the [Node.js](https://nodejs.org) version used by the action runner.
+
 ## Version [2.5.0](https://github.com/cedx/setup-dart/compare/v2.4.1...v2.5.0)
 - Added support for the bleeding edge release channel.
 - Ported the documentation to [docsify](https://docsify.js.org).
