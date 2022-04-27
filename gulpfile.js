@@ -15,7 +15,8 @@ const sources = ["*.js", "lib/**/*.js"];
 /** The default task. */
 export default gulp.series(
 	clean,
-	build
+	build,
+	version
 );
 
 /** Builds the project. */
