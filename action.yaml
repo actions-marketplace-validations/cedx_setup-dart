@@ -1,4 +1,4 @@
-name: Setup Dart Action
+name: Setup Dart
 description: Set up your GitHub Actions workflow with a specific version of the Dart SDK.
 author: Cédric Belin
 
