@@ -34,7 +34,7 @@ describe("DartSdk", /** @this {Mocha.Suite} */ function() {
 	describe(".download()", () => {
 		it("should properly download and extract the Dart SDK", async () => {
 			const sdkDir = await new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.16.0"}).download();
-			assert(existsSync(join(sdkDir, `bin/${process.platform == "win32" ? "dart.exe" : "dart"}`)));
+			assert.ok(existsSync(join(sdkDir, `bin/${process.platform == "win32" ? "dart.exe" : "dart"}`)));
 			assert.equal((await readFile(join(sdkDir, "version"), "utf8")).trim(), "2.16.0");
 		});
 	});
@@ -43,7 +43,7 @@ describe("DartSdk", /** @this {Mocha.Suite} */ function() {
 		it("should add the Dart SDK binaries to the PATH environment variable", async () => {
 			const dartSdk = new DartSdk;
 			await dartSdk.install();
-			assert(process.env.PATH.includes(normalize(`/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin`)));
+			assert.ok(process.env.PATH.includes(normalize(`/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin`)));
 		});
 	});
 });
