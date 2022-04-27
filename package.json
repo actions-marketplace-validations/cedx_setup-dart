@@ -1,5 +1,5 @@
 {
-	"bin": "bin/setup_dart.js",
+	"bin": "./bin/setup_dart.js",
 	"bugs": "https://github.com/cedx/setup-dart/issues",
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"exports": "./lib/index.js",
