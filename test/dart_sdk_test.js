@@ -10,8 +10,8 @@ describe("DartSdk", function() {
 	this.timeout(180000);
 
 	before(() => {
-		if (!process.env.RUNNER_TEMP) process.env.RUNNER_TEMP = resolve("var/tests/temp");
-		if (!process.env.RUNNER_TOOL_CACHE) process.env.RUNNER_TOOL_CACHE = resolve("var/tests/cache");
+		if (!process.env.RUNNER_TEMP) process.env.RUNNER_TEMP = resolve("var/tmp");
+		if (!process.env.RUNNER_TOOL_CACHE) process.env.RUNNER_TOOL_CACHE = resolve("var/cache");
 	});
 
 	describe(".releaseUrl", () => {
