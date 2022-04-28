@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {existsSync} from "node:fs";
 import {readFile} from "node:fs/promises";
-import {normalize, join, resolve} from "node:path";
+import {join, resolve} from "node:path";
+import process, {env} from "node:process";
 import {format} from "node:util";
 import {Architecture, DartSdk, Platform, ReleaseChannel} from "../lib/index.js";
 
@@ -12,8 +13,8 @@ describe("DartSdk", /** @this {Mocha.Suite} */ function() {
 	this.timeout("180s");
 
 	before(() => {
-		if (!process.env.RUNNER_TEMP) process.env.RUNNER_TEMP = resolve("var/tmp");
-		if (!process.env.RUNNER_TOOL_CACHE) process.env.RUNNER_TOOL_CACHE = resolve("var/cache");
+		if (!env.RUNNER_TEMP) env.RUNNER_TEMP = resolve("var/tmp");
+		if (!env.RUNNER_TOOL_CACHE) env.RUNNER_TOOL_CACHE = resolve("var/cache");
 	});
 
 	describe(".releaseUrl", () => {
@@ -33,17 +34,15 @@ describe("DartSdk", /** @this {Mocha.Suite} */ function() {
 
 	describe(".download()", () => {
 		it("should properly download and extract the Dart SDK", async () => {
-			const sdkDir = await new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.16.0"}).download();
-			assert.ok(existsSync(join(sdkDir, `bin/${process.platform == "win32" ? "dart.exe" : "dart"}`)));
-			assert.equal((await readFile(join(sdkDir, "version"), "utf8")).trim(), "2.16.0");
+			const output = await new DartSdk({releaseChannel: ReleaseChannel.stable, version: "2.16.0"}).download();
+			assert.ok(existsSync(join(output, `bin/${process.platform == "win32" ? "dart.exe" : "dart"}`)));
+			assert.equal((await readFile(join(output, "version"), "utf8")).trim(), "2.16.0");
 		});
 	});
 
 	describe(".install()", () => {
 		it("should add the Dart SDK binaries to the PATH environment variable", async () => {
-			const dartSdk = new DartSdk;
-			await dartSdk.install();
-			assert.ok(process.env.PATH.includes(normalize(`/dart-sdk/${dartSdk.version}/${dartSdk.architecture}/bin`)));
+			assert.ok(env.PATH.includes(await new DartSdk().install()));
 		});
 	});
 });
