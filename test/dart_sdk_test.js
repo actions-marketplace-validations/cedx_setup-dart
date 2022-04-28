@@ -43,7 +43,7 @@ describe("DartSdk", /** @this {Mocha.Suite} */ function() {
 	describe(".install()", () => {
 		it("should add the Dart SDK binaries to the PATH environment variable", async () => {
 			const path = await new DartSdk().install();
-			assert.ok(env.PATH.includes(path));
+			assert.ok(env.PATH?.includes(path));
 		});
 	});
 });
