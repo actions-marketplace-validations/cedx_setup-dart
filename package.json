@@ -1,5 +1,5 @@
 {
-	"bin": "./bin/setup_dart.js",
+	"bin": "./bin/setup_dart.mjs",
 	"bugs": "https://github.com/cedx/setup-dart/issues",
 	"description": "Set up your GitHub Actions workflow with a specific version of the Dart SDK.",
 	"exports": "./lib/index.js",
@@ -46,7 +46,7 @@
 	},
 	"scripts": {
 		"prepack": "gulp",
-		"start": "node bin/setup_dart.js",
+		"start": "node bin/setup_dart.mjs",
 		"test": "c8 --all --include=lib/**/*.js --report-dir=var --reporter=lcovonly node_modules/.bin/mocha --recursive"
 	}
 }
