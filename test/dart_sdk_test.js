@@ -5,7 +5,7 @@ import {join, resolve} from "node:path";
 import process, {env} from "node:process";
 import test from "node:test";
 import {format} from "node:util";
-import {Architecture, DartSdk, Platform, ReleaseChannel} from "../lib/index.js";
+import {Architecture, DartSdk, Platform, ReleaseChannel} from "../src/index.js";
 
 // Initializes the environment.
 if (!env.RUNNER_TEMP) env.RUNNER_TEMP = resolve("var/tmp");
