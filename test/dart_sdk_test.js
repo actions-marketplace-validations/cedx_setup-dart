@@ -3,7 +3,6 @@ import {existsSync} from "node:fs";
 import {readFile} from "node:fs/promises";
 import {join, resolve} from "node:path";
 import process, {env} from "node:process";
-// @ts-expect-error TS2614
 import {describe, it} from "node:test";
 import {format} from "node:util";
 import {Architecture, DartSdk, Platform, ReleaseChannel} from "../src/index.js";
